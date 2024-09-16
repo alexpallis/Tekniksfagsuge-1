@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=6 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="Texture2D" uid="uid://dch72i3pgbnb7" path="res://Assets/Dead wold/Ground_rocks.png" id="1_lb7xp"]
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
+[ext_resource type="PackedScene" uid="uid://dpvbkyydmd70h" path="res://Scens/dream_shroomie.tscn" id="3_l77ws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qih8"]
 texture = ExtResource("1_lb7xp")
@@ -280,3 +281,6 @@ position = Vector2(0, 47)
 position = Vector2(-5, -49)
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="DreamShroomie" parent="." instance=ExtResource("3_l77ws")]
+position = Vector2(92, 53)
