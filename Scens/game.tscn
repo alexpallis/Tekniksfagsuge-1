@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://kxkk7rk15rhp"]
+
+[ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ymc8k")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_smoothed = true
+position_smoothing_enabled = true
