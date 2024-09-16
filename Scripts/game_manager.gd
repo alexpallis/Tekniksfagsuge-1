@@ -13,9 +13,11 @@ func  add_coin():
 
 func  lose_health():
 	health -= 1
-	if health < 1:
-		get_tree().reload_current_scene()
 	print(health)
 	
 func gain_health():
 	health += 1
+	
+func Game_Over():
+	if health < 1:
+		get_tree().reload_current_scene()
