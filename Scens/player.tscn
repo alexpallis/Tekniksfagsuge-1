@@ -1,7 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://c5lfgfc63k71o"]
+[gd_scene load_steps=40 format=3 uid="uid://c5lfgfc63k71o"]
 
 [ext_resource type="Texture2D" uid="uid://cofpp1w4o6ct" path="res://Sprites/frontidleboogie.png" id="1_6a4fh"]
-[ext_resource type="Script" path="res://Sprites/player.gd" id="1_xhu21"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xhu21"]
 [ext_resource type="Texture2D" uid="uid://j7vserpqc6mi" path="res://Sprites/Boogieidle1-Sheet.png" id="2_btwnv"]
 [ext_resource type="Texture2D" uid="uid://belsohqjr4htu" path="res://Sprites/bakidleboogie-Sheet.png" id="3_wj2rn"]
 [ext_resource type="Texture2D" uid="uid://b2yudq6tqdqp1" path="res://Sprites/Bootywalkv2-Sheet.png" id="4_v5vib"]
@@ -87,10 +87,6 @@ region = Rect2(510, 0, 170, 120)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffihx"]
 atlas = ExtResource("4_v5vib")
 region = Rect2(680, 0, 170, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_enuwu"]
-atlas = ExtResource("5_cvkg4")
-region = Rect2(0, 0, 220, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suv1w"]
 atlas = ExtResource("5_cvkg4")
@@ -217,12 +213,9 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk down",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_enuwu")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_suv1w")
 }, {
@@ -240,7 +233,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk left right",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,7 +253,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk up",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sv07"]
@@ -273,9 +266,8 @@ script = ExtResource("1_xhu21")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.317318, 0.317318)
 sprite_frames = SubResource("SpriteFrames_idoca")
-animation = &"idl up"
+animation = &"walk up"
 autoplay = "idl down"
-frame_progress = 0.700622
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7sv07")
