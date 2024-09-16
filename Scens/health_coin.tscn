@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxeyyer33ehw8"]
+
+[ext_resource type="Script" path="res://Scens/health_coin.gd" id="1_l3a3s"]
+
+[node name="HealthCoin" type="Area2D"]
+script = ExtResource("1_l3a3s")

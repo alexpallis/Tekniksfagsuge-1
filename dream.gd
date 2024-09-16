@@ -2,9 +2,10 @@ extends Area2D
 
 const SPEED = 50
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var game_manager = %GameManager
 
 	
-func _physics_process(_delta):
+func _physics_process(delta):
 	
 	var direction = Input.get_vector("move left","move right","move up","move down")
 	
@@ -30,4 +31,8 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_released("move up"):
 		animated_sprite.play("idl up")
-	
+
+
+
+func _on_body_entered(body):
+	game_manager.lose_health()
