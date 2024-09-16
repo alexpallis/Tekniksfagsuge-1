@@ -213,7 +213,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk down",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -253,7 +253,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk up",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sv07"]
@@ -266,7 +266,7 @@ script = ExtResource("1_xhu21")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.317318, 0.317318)
 sprite_frames = SubResource("SpriteFrames_idoca")
-animation = &"walk up"
+animation = &"walk down"
 autoplay = "idl down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
