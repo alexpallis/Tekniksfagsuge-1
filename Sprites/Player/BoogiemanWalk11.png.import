@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j7vserpqc6mi"
-path="res://.godot/imported/Boogieidle1-Sheet.png-9f5df6f70679af6dc3b792c3a7625e81.ctex"
+uid="uid://cohtb45u8fb3q"
+path="res://.godot/imported/BoogiemanWalk11.png-93e9701eefdb0412a7dcf9e2a0d7a2b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Boogieidle1-Sheet.png"
-dest_files=["res://.godot/imported/Boogieidle1-Sheet.png-9f5df6f70679af6dc3b792c3a7625e81.ctex"]
+source_file="res://Sprites/Player/BoogiemanWalk11.png"
+dest_files=["res://.godot/imported/BoogiemanWalk11.png-93e9701eefdb0412a7dcf9e2a0d7a2b6.ctex"]
 
 [params]
 

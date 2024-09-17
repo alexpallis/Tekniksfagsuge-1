@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0et253olydj7"
-path="res://.godot/imported/Teddybackidle.png-daaff9b6933494842367e60c3335554a.ctex"
+uid="uid://c6plonfd1bc22"
+path="res://.godot/imported/teddyfrontwalk1.png-4c1c8710075a09c037ac74e7c67d33fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Teddybackidle.png"
-dest_files=["res://.godot/imported/Teddybackidle.png-daaff9b6933494842367e60c3335554a.ctex"]
+source_file="res://Sprites/Bjørn/teddyfrontwalk1.png"
+dest_files=["res://.godot/imported/teddyfrontwalk1.png-4c1c8710075a09c037ac74e7c67d33fe.ctex"]
 
 [params]
 

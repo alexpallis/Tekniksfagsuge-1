@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cofpp1w4o6ct"
-path="res://.godot/imported/frontidleboogie.png-53dc6898f8f9dffc5e91f61b86fb84f7.ctex"
+uid="uid://belsohqjr4htu"
+path="res://.godot/imported/bakidleboogie-Sheet.png-fd5c4e4c4b804a581e49d6a8d4b67d5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frontidleboogie.png"
-dest_files=["res://.godot/imported/frontidleboogie.png-53dc6898f8f9dffc5e91f61b86fb84f7.ctex"]
+source_file="res://Sprites/Player/bakidleboogie-Sheet.png"
+dest_files=["res://.godot/imported/bakidleboogie-Sheet.png-fd5c4e4c4b804a581e49d6a8d4b67d5c.ctex"]
 
 [params]
 
