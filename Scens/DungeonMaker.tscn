@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8d02x4cfqqdv"]
+[gd_scene load_steps=5 format=3 uid="uid://dxmhdpumeduvx"]
 
 [ext_resource type="Script" path="res://dungeon_generator.gd" id="1_jxwbd"]
 [ext_resource type="Texture2D" uid="uid://bdbl74rcwuytv" path="res://Assets/totiles.png" id="1_yd7gc"]

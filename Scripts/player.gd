@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 50
-const DASH_SPEED = 175
+const SPEED = 40
+const DASH_SPEED = 120
 var dashing = false 
 
 @onready var dash_cooldown = $"dash cooldown"
