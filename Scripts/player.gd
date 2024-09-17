@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 const SPEED = 40
 const DASH_SPEED = 120
+=======
+const SPEED = 200
+const DASH_SPEED = 700
+>>>>>>> parent of 0cb6bc9 (Player works now again)
 var dashing = false 
 
 @onready var dash_cooldown = $"dash cooldown"

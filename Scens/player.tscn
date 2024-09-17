@@ -227,9 +227,12 @@ height = 86.0
 [node name="Player" type="CharacterBody2D"]
 light_mask = 3
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 scale = Vector2(0.125, 0.125)
 >>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
+=======
+>>>>>>> parent of 0cb6bc9 (Player works now again)
 script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]

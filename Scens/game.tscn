@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=5 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
-[ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
 [ext_resource type="PackedScene" uid="uid://dpvbkyydmd70h" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="PackedScene" uid="uid://c7dvp5stlvk2g" path="res://Scens/bjørn.tscn" id="4_3r0b2"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
@@ -13,6 +12,7 @@
 light_mask = 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 position = Vector2(-45, 110)
 =======
 position = Vector2(-206, -146)
@@ -20,10 +20,12 @@ position = Vector2(-206, -146)
 =======
 position = Vector2(-31, 204)
 >>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
+=======
+position = Vector2(0, 47)
+>>>>>>> parent of 0cb6bc9 (Player works now again)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
-zoom = Vector2(4, 4)
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -53,9 +55,12 @@ position = Vector2(-430, -161)
 scale = Vector2(1.07627, 0.925212)
 =======
 position = Vector2(-394, -164)
+<<<<<<< HEAD
 =======
 position = Vector2(-129, 175)
 >>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
 
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
 >>>>>>> 0cb6bc91ac1bd33e36d4fad181fe7ea3e1b39934
+=======
+>>>>>>> parent of 0cb6bc9 (Player works now again)
