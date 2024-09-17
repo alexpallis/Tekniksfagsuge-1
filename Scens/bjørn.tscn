@@ -400,28 +400,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
-radius = 373.484
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fyyu"]
+radius = 400.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
 radius = 20.0
 height = 104.0
 
 [node name="Bjørn" type="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 3
 script = ExtResource("1_csrmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"idl up"
+animation = &"shoot up"
 autoplay = "idl down"
-frame_progress = 0.241623
 
 [node name="detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
-shape = SubResource("CircleShape2D_13p4w")
+scale = Vector2(1, 1.12)
+shape = SubResource("CircleShape2D_4fyyu")
+one_way_collision_margin = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
 shape = SubResource("CapsuleShape2D_1wght")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
