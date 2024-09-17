@@ -261,11 +261,12 @@ radius = 34.0
 height = 86.0
 
 [node name="Player" type="CharacterBody2D"]
+light_mask = 3
 script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"idl up"
+animation = &"idl left right"
 autoplay = "idl down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
