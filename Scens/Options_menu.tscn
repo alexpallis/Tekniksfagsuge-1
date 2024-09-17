@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bloi2axwjnn7f"]
 
-[ext_resource type="Script" path="res://Scens/options_menu.gd" id="1_yyyjt"]
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_yyyjt"]
 
 [node name="Optionsmenu" type="Node2D"]
 position = Vector2(448, 80)
