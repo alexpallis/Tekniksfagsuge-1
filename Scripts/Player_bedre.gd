@@ -1,21 +1,16 @@
-extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $dash_timer
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
 const DASH_SPEED = 700.0
 var dashing = false
 var updown = false
 var downup = false
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+
+
 	if Input.is_action_just_pressed("Dash"):
 		dashing = true
 		dash_timer.start()

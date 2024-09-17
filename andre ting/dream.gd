@@ -4,9 +4,10 @@ const SPEED = 50
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var game_manager = %GameManager
 
+func _ready():
+	animated_sprite.play("wakeup")
 
 func _physics_process(delta):
-	
 	var direction = Input.get_vector("move left","move right","move up","move down")
 	
 	if direction.x < 0:

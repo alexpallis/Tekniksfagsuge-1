@@ -265,9 +265,17 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"idl down"
+animation = &"idl up"
 autoplay = "idl down"
-frame_progress = 0.297606
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7sv07")
+
+[node name="dash timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="dash cooldown" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash cooldown" to="." method="_on_dash_cooldown_timeout"]
