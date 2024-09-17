@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://86dif3hdi7lo"]
 
-[ext_resource type="Script" path="res://Scens/main_menu.gd" id="1_bv8hl"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_bv8hl"]
 
 [sub_resource type="SystemFont" id="SystemFont_64htb"]
 
