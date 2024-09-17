@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://belsohqjr4htu"
-path="res://.godot/imported/bakidleboogie-Sheet.png-b4edfdba50e835a668aaa59ced9c5e8b.ctex"
+uid="uid://caufl7io57v1v"
+path="res://.godot/imported/teddybackwalk1.png-80fe8b767d1df558217341a3dc0c0252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bakidleboogie-Sheet.png"
-dest_files=["res://.godot/imported/bakidleboogie-Sheet.png-b4edfdba50e835a668aaa59ced9c5e8b.ctex"]
+source_file="res://Sprites/Bjørn/teddybackwalk1.png"
+dest_files=["res://.godot/imported/teddybackwalk1.png-80fe8b767d1df558217341a3dc0c0252.ctex"]
 
 [params]
 

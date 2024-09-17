@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0b8asl84lpr0"
-path="res://.godot/imported/bootiewalk3.png-4435c3f0320b4e5f56ed99035707affb.ctex"
+uid="uid://dhqwnbi58st2j"
+path="res://.godot/imported/teddyshootside.png-9c9b009b9a68b36a0c81268ecc2ea5ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bootiewalk3.png"
-dest_files=["res://.godot/imported/bootiewalk3.png-4435c3f0320b4e5f56ed99035707affb.ctex"]
+source_file="res://Sprites/Bjørn/teddyshootside.png"
+dest_files=["res://.godot/imported/teddyshootside.png-9c9b009b9a68b36a0c81268ecc2ea5ab.ctex"]
 
 [params]
 
