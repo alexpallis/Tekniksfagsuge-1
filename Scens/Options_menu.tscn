@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bloi2axwjnn7f"]
+
+[ext_resource type="Script" path="res://Scens/options_menu.gd" id="1_yyyjt"]
+
+[node name="Optionsmenu" type="Node2D"]
+position = Vector2(448, 80)
+script = ExtResource("1_yyyjt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -441.0
+offset_top = -75.0
+offset_right = 702.0
+offset_bottom = 573.0
+color = Color(0.333333, 0.588235, 0.588235, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 78.0
+offset_bottom = 136.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Volumen"
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="Screen" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Screen"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
