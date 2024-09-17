@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c7dvp5stlvk2g"]
+[gd_scene load_steps=62 format=3 uid="uid://c7dvp5stlvk2g"]
 
 [ext_resource type="Script" path="res://Scripts/bjørn.gd" id="1_csrmv"]
 [ext_resource type="Texture2D" uid="uid://dovqut03sajmu" path="res://Sprites/Bjørn/teddyfront.png" id="1_k2pfm"]
@@ -400,13 +400,17 @@ radius = 373.484
 radius = 20.0
 height = 104.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60gcc"]
+radius = 48.0
+height = 224.0
+
 [node name="Bjørn" type="CharacterBody2D"]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_csrmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"shoot down"
+animation = &"walk left right"
 autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
@@ -417,5 +421,15 @@ shape = SubResource("CircleShape2D_13p4w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1wght")
 
+[node name="bjørn hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bjørn hitbox"]
+shape = SubResource("CapsuleShape2D_60gcc")
+
+[node name="invin timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="bjørn hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
+[connection signal="body_exited" from="bjørn hitbox" to="." method="_on_bjørn_hitbox_body_exited"]
+[connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]

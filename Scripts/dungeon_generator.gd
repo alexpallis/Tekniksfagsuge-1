@@ -1,11 +1,10 @@
-extends Node
+extends TileMap
 
+@export var mapWidth = 64
+@export var mapHeight = 64
 
-# Called when the node enters the scene tree for the first time.
+@export var minRoomSize = 5
+@export var maxRoomSize = 10
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	Generator.generate(self, mapWidth, mapHeight, minRoomSize, maxRoomSize)

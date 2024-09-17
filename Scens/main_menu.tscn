@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://86dif3hdi7lo"]
 
-[ext_resource type="Script" path="res://Scens/main_menu.gd" id="1_hjg0w"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hjg0w"]
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(50, 107)
