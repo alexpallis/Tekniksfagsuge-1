@@ -5,12 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://dpvbkyydmd70h" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="PackedScene" uid="uid://c7dvp5stlvk2g" path="res://Scens/bjørn.tscn" id="4_3r0b2"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
+[ext_resource type="PackedScene" uid="uid://dxmhdpumeduvx" path="res://Scens/DungeonMaker.tscn" id="5_u6bj5"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
 light_mask = 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+position = Vector2(-45, 110)
+=======
 position = Vector2(-206, -146)
+>>>>>>> 0cb6bc91ac1bd33e36d4fad181fe7ea3e1b39934
+=======
+position = Vector2(-31, 204)
+>>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
@@ -36,6 +45,17 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
+<<<<<<< HEAD
+<<<<<<< HEAD
+position = Vector2(-430, -161)
+
+[node name="RandomDungeon" parent="." instance=ExtResource("5_u6bj5")]
+scale = Vector2(1.07627, 0.925212)
+=======
 position = Vector2(-394, -164)
+=======
+position = Vector2(-129, 175)
+>>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
 
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
+>>>>>>> 0cb6bc91ac1bd33e36d4fad181fe7ea3e1b39934
