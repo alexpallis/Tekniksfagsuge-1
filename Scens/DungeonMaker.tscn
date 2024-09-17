@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8d02x4cfqqdv"]
 
-[ext_resource type="Script" path="res://Scens/dungeon_generator.gd" id="1_jxwbd"]
+[ext_resource type="Script" path="res://dungeon_generator.gd" id="1_jxwbd"]
 [ext_resource type="Texture2D" uid="uid://bdbl74rcwuytv" path="res://Assets/totiles.png" id="1_yd7gc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4vyf"]
@@ -13,7 +13,7 @@ texture = ExtResource("1_yd7gc")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e4vyf")
 
-[node name="TileMap" type="TileMap"]
+[node name="RandomDungeon" type="TileMap"]
 tile_set = SubResource("TileSet_lauot")
 format = 2
 script = ExtResource("1_jxwbd")

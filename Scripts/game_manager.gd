@@ -3,7 +3,7 @@ extends Node
 var coins = 0
 var kills = 0
 var health = 3
-
+var level = 0
 @onready var coin_label = $CoinLabel
 
 
@@ -14,8 +14,10 @@ func  add_coin():
 func  lose_health():
 	health -= 1
 	print(health)
-	if health < 1:
-		get_tree().reload_current_scene()
 	
 func gain_health():
 	health += 1
+	
+func Game_Over():
+	if health < 1:
+		get_tree().reload_current_scene()
