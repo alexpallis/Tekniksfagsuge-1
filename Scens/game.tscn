@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=5 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
 [ext_resource type="PackedScene" uid="uid://dpvbkyydmd70h" path="res://Scens/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
+[ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="4_xxtxn"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
-position = Vector2(0, 47)
+position = Vector2(426, 316)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
@@ -30,3 +31,5 @@ script = ExtResource("4_lnum0")
 [node name="CoinLabel" type="Label" parent="GameManager"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="TileMap" parent="." instance=ExtResource("4_xxtxn")]

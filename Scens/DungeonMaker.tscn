@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8d02x4cfqqdv"]
+
+[ext_resource type="Script" path="res://Scens/dungeon_generator.gd" id="1_jxwbd"]
+[ext_resource type="Texture2D" uid="uid://bdbl74rcwuytv" path="res://Assets/totiles.png" id="1_yd7gc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4vyf"]
+texture = ExtResource("1_yd7gc")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_lauot"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_e4vyf")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_lauot")
+format = 2
+script = ExtResource("1_jxwbd")
