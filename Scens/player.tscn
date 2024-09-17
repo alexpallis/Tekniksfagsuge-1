@@ -226,9 +226,14 @@ height = 86.0
 
 [node name="Player" type="CharacterBody2D"]
 light_mask = 3
+<<<<<<< HEAD
+=======
+scale = Vector2(0.125, 0.125)
+>>>>>>> 80f9a41b37316ca471856a22da7fbe94c7f00033
 script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_x8j3y")
 animation = &"idl down"
 autoplay = "idl down"
