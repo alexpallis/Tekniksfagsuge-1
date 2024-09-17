@@ -3,7 +3,6 @@ extends Node
 var coins = 0
 var kills = 0
 var health = 3
-var level = 0
 @onready var coin_label = $CoinLabel
 
 

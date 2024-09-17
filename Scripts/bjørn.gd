@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const  SPEED = 175
+const  SPEED = 100
 var player_chase = false
 var player = null
 
