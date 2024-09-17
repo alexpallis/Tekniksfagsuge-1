@@ -1,3 +1,71 @@
-[gd_scene format=3 uid="uid://86dif3hdi7lo"]
+[gd_scene load_steps=3 format=3 uid="uid://86dif3hdi7lo"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://Scens/main_menu.gd" id="1_bv8hl"]
+
+[sub_resource type="SystemFont" id="SystemFont_64htb"]
+
+[node name="MainMenu" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchor_right = 0.378472
+anchor_bottom = 0.466049
+offset_left = -1.0
+offset_top = 17.0
+offset_right = -1.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.64958, 2.14173)
+script = ExtResource("1_bv8hl")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.802799, 0.000545803, 0.81143, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -55.0
+offset_right = 38.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_64htb")
+theme_override_font_sizes/font_size = 18
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_64htb")
+theme_override_font_sizes/font_size = 18
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_64htb")
+theme_override_font_sizes/font_size = 18
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
