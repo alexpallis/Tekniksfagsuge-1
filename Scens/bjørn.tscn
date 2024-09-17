@@ -408,13 +408,13 @@ radius = 20.0
 height = 104.0
 
 [node name="Bjørn" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_csrmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"idl up"
+animation = &"idl down"
 autoplay = "idl down"
-frame_progress = 0.241623
 
 [node name="detection" type="Area2D" parent="."]
 

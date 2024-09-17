@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=6 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
+[ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
 [ext_resource type="PackedScene" uid="uid://dpvbkyydmd70h" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="PackedScene" uid="uid://c7dvp5stlvk2g" path="res://Scens/bjørn.tscn" id="4_3r0b2"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
@@ -9,10 +10,11 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
 light_mask = 1
-position = Vector2(0, 47)
+position = Vector2(-206, -146)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
+zoom = Vector2(4, 4)
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -35,3 +37,5 @@ offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
 position = Vector2(-394, -164)
+
+[node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
