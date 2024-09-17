@@ -14,6 +14,7 @@ func  lose_health():
 	health -= 1
 	print(health)
 	
+	
 func gain_health():
 	health += 1
 	
