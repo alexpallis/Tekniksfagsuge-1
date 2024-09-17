@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bptex18xdskgw"
-path="res://.godot/imported/Teddythrowupv1.png-e5117add3e00b2c8bb9044e9d4491b9e.ctex"
+uid="uid://bkjcuf4m0q1qh"
+path="res://.godot/imported/Boogiedahv1.png-f0ecc94a8ab8636066711a47b730e75a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teddythrowupv1.png"
-dest_files=["res://.godot/imported/Teddythrowupv1.png-e5117add3e00b2c8bb9044e9d4491b9e.ctex"]
+source_file="res://Sprites/Player/Boogiedahv1.png"
+dest_files=["res://.godot/imported/Boogiedahv1.png-f0ecc94a8ab8636066711a47b730e75a.ctex"]
 
 [params]
 

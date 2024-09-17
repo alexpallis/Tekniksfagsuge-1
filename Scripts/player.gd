@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 50
-const DASH_SPEED = 175
+const SPEED = 40
+const DASH_SPEED = 110
 var dashing = false 
 
 @onready var dash_cooldown = $"dash cooldown"
@@ -16,27 +16,40 @@ func _physics_process(delta):
 		if dashing:
 			velocity.x = direction.x * DASH_SPEED
 			velocity.y = direction.y * DASH_SPEED
+			
+			if direction.x < 0 and direction.y == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("dash left right")
+	
+			if direction.x > 0 and direction.y == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("dash left right")
+	
+			if direction.y < 0:
+				animated_sprite.play("dash left right")
+	
+			if direction.y > 0:
+				animated_sprite.play("dash left right")
 		else:
 			velocity.x = direction.x * SPEED
 			velocity.y = direction.y * SPEED
+			
+			if direction.x < 0 and direction.y == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("walk left right")
+	
+			if direction.x > 0 and direction.y == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("walk left right")
+	
+			if direction.y < 0:
+				animated_sprite.play("walk up")
+	
+			if direction.y > 0:
+				animated_sprite.play("walk down")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	#Animation
-	if direction.x < 0 and direction.y == 0:
-		animated_sprite.flip_h = true
-		animated_sprite.play("walk left right")
-	
-	if direction.x > 0 and direction.y == 0:
-		animated_sprite.flip_h = false
-		animated_sprite.play("walk left right")
-	
-	if direction.y < 0:
-		animated_sprite.play("walk up")
-	
-	if direction.y > 0:
-		animated_sprite.play("walk down")
 	
 	if direction.y == 0 and direction.x == 0:
 		
@@ -53,9 +66,10 @@ func _physics_process(delta):
 			animated_sprite.play("idl down")
 	
 	if (sqrt(velocity.x*velocity.x)) > SPEED:
-		animated_sprite.play("Dash")
+		animated_sprite.play("dash left right")
 	elif (sqrt(velocity.y*velocity.y)) > SPEED:
-		animated_sprite.play("Dash")
+		animated_sprite.play("dash left right")
+	
 		
 	if Input.is_action_just_pressed("Dash"):
 		dashing = true
