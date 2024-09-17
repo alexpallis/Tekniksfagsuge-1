@@ -10,7 +10,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
 light_mask = 1
-position = Vector2(-206, -146)
+position = Vector2(-31, 204)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
@@ -36,6 +36,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
-position = Vector2(-394, -164)
+position = Vector2(-129, 175)
 
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
