@@ -410,6 +410,7 @@ radius = 48.6621
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.125, 0.125)
+collision_layer = 3
 script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]

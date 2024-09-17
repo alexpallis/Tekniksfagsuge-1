@@ -8,8 +8,10 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
+
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
-position = Vector2(-206, -146)
+position = Vector2(374, 195)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, -49)
@@ -35,6 +37,4 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
-position = Vector2(-394, -164)
-
-[node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
+position = Vector2(358, 194)

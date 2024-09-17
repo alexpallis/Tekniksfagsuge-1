@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://ci7x12uk2vv2u" path="res://Sprites/Bjørn/teddywalksid.png" id="7_nc6ct"]
 [ext_resource type="Texture2D" uid="uid://caufl7io57v1v" path="res://Sprites/Bjørn/teddybackwalk1.png" id="8_dgfyb"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
+radius = 20.0
+height = 104.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wj5s"]
 atlas = ExtResource("1_k2pfm")
 region = Rect2(0, 0, 150, 120)
@@ -396,10 +400,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
 radius = 373.484
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
-radius = 20.0
-height = 104.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60gcc"]
 radius = 48.0
 height = 224.0
@@ -408,18 +408,23 @@ height = 224.0
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_csrmv")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1wght")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
 animation = &"walk left right"
 autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+light_mask = 4
+visibility_layer = 4
 shape = SubResource("CircleShape2D_13p4w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_1wght")
 
 [node name="bjørn hitbox" type="Area2D" parent="."]
 

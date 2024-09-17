@@ -34,6 +34,8 @@ func _physics_process(delta):
 	
 	else:
 		animated_sprite.play("idl down")
+	
+	move_and_slide()
 
 func _on_detection_body_entered(body):
 	player = body
