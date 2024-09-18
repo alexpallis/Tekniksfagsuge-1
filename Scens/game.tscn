@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=10 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
 [ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
 [ext_resource type="PackedScene" uid="uid://d2vdxfhgw4gh" path="res://Scens/coin.tscn" id="7_msmt4"]
 [ext_resource type="PackedScene" uid="uid://cyhvuoq7ais2u" path="res://Scens/papirsfly.tscn" id="8_o685w"]
+[ext_resource type="PackedScene" uid="uid://b2htcgmpe4a5h" path="res://Scens/Enemy spawner.tscn" id="9_bi6br"]
 
 [node name="Game" type="Node2D"]
 
@@ -96,3 +97,5 @@ position = Vector2(375, 201)
 
 [node name="papirsfly3" parent="." instance=ExtResource("8_o685w")]
 position = Vector2(326, 106)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("9_bi6br")]

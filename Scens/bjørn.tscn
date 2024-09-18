@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://nr3swj2asqvf" path="res://Sprites/Bjørn/teddyfrontshoot.png" id="4_nxgpo"]
 [ext_resource type="Texture2D" uid="uid://dhqwnbi58st2j" path="res://Sprites/Bjørn/teddyshootside.png" id="5_gqx4j"]
 [ext_resource type="Texture2D" uid="uid://c6plonfd1bc22" path="res://Sprites/Bjørn/teddyfrontwalk1.png" id="6_qsvg3"]
-[ext_resource type="Texture2D" uid="uid://dc41dibrtxw11" path="res://Sprites/Bjørn/Teddythrowupv1.png" id="7_3bgjj"]
+[ext_resource type="Texture2D" uid="uid://bptex18xdskgw" path="res://Sprites/Bjørn/Teddythrowupv1.png" id="7_3bgjj"]
 [ext_resource type="Texture2D" uid="uid://ci7x12uk2vv2u" path="res://Sprites/Bjørn/teddywalksid.png" id="7_nc6ct"]
 [ext_resource type="Texture2D" uid="uid://caufl7io57v1v" path="res://Sprites/Bjørn/teddybackwalk1.png" id="8_dgfyb"]
 
