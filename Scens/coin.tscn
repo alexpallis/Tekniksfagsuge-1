@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2vdxfhgw4gh"]
+[gd_scene load_steps=37 format=3 uid="uid://d2vdxfhgw4gh"]
 
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_p65a8"]
 [ext_resource type="Texture2D" uid="uid://daurjiv3qpgag" path="res://Sprites/Dreamcatcherspin1.png" id="2_dj2nu"]
+[ext_resource type="AudioStream" uid="uid://cji30w3afiyu7" path="res://Assets/coin.wav" id="3_d364f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0elk"]
 atlas = ExtResource("2_dj2nu")
@@ -232,7 +233,7 @@ animations = [{
 radius = 59.3043
 
 [node name="Coin" type="Area2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_p65a8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -242,5 +243,9 @@ frame_progress = 0.199956
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uy4q5")
+
+[node name="Coin noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d364f")
+volume_db = 1.54
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

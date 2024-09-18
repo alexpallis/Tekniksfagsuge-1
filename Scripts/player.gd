@@ -16,6 +16,9 @@ var attack_ip = false
 @onready var animated_sprite = $AnimatedSprite
 @onready var attack_cooldown = $"attack cooldown"
 @onready var dael_attack_timer = $"dael attack timer"
+@onready var attack_noise = $"Attack noise"
+@onready var dash_noise = $"Dash noise"
+
 
 func _physics_process(delta):
 	dash()
@@ -69,6 +72,7 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	if Input.is_action_just_pressed("attack"):
+		attack_noise.play()
 		if direction.y < 0:
 			animated_sprite.play("attack up")
 		if direction.y > 0:
@@ -101,6 +105,7 @@ func _physics_process(delta):
 
 func dash():
 	if Input.is_action_just_pressed("Dash") and dash_cooldown == true:
+		dash_noise.play()
 		dashing = true
 		dash_timer.start()
 		dash_cooldown_timer.start()
