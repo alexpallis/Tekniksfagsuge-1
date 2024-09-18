@@ -18,6 +18,10 @@ var can_take_damage = true
 @onready var attack_cooldown_timer = $"attack cooldown timer"
 @onready var attack_timer = $"attack timer"
 
+#Hvor skal jeg placere dette kode, kan ikke finde rundt i dette.
+#var papir = global.papir_scene.instantiate()
+#papir.position = self.position
+#papirer.add_child(papir)
 
 func _physics_process(_delta):
 	deal_with_damage()
@@ -122,9 +126,7 @@ func _on_invin_timer_timeout():
 func _on_attack_timer_timeout():
 	bjørn_shoot = false
 	attack_cooldown_timer.start()
-	var papir = global.papir_scene.instantiate()
-	papir.position = self.position
-	papirer.add_child(papir)
+	
 
 
 func _on_attack_cooldown_timer_timeout():
