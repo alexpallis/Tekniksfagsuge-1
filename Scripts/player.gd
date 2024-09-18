@@ -15,7 +15,7 @@ var attack_ip = false
 @onready var dash_timer = $"dash timer"
 @onready var animated_sprite = $AnimatedSprite
 @onready var attack_cooldown = $"attack cooldown"
-@onready var dael_attack_timer = $"deal attack timer"
+@onready var dael_attack_timer = $"dael attack timer"
 @onready var attack_noise = $"Attack noise"
 @onready var dash_noise = $"Dash noise"
 
