@@ -42,11 +42,18 @@ func _physics_process(delta):
 				animated_sprite.flip_h = false
 				animated_sprite.play("dash left right")
 	
-			if direction.y < 0:
-				animated_sprite.play("dash left right")
+			if direction.y < 0 and direction.x == 0:
+				animated_sprite.play("dash up")
 	
-			if direction.y > 0:
-				animated_sprite.play("dash left right")
+			if direction.y > 0 and direction.x == 0:
+				animated_sprite.play("dash down")
+			
+			if direction.y < 0 and (direction.x < 0 or direction.x > 0):
+				animated_sprite.play("dash up")
+			
+			if direction.y > 0 and (direction.x < 0 or direction.x > 0):
+				animated_sprite.play("dash down")
+			
 		else:
 			velocity.x = direction.x * SPEED
 			velocity.y = direction.y * SPEED
@@ -92,11 +99,6 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move down") and Input.is_action_pressed("move up") or Input.is_action_pressed("move left") and Input.is_action_pressed("move right"):
 			animated_sprite.play("idl down")
 
-	if (sqrt(velocity.x*velocity.x)) > SPEED:
-		animated_sprite.play("dash left right")
-	elif (sqrt(velocity.y*velocity.y)) > SPEED:
-		animated_sprite.play("dash left right")
-	
 	move_and_slide()
 
 func dash():
@@ -108,8 +110,6 @@ func dash():
 
 func _on_dash_timer_timeout():
 	dashing = false
-
-
 
 func _on_dash_cooldown_timeout():
 	dash_cooldown = true

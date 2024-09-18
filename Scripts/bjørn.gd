@@ -16,7 +16,6 @@ var can_take_damage = true
 @onready var invin_timer = $"invin timer"
 @onready var attack_cooldown_timer = $"attack cooldown timer"
 @onready var attack_timer = $"attack timer"
-@onready var papirsfly = $"."
 
 func _physics_process(_delta):
 	deal_with_damage()
@@ -109,7 +108,7 @@ func _on_detection_body_entered(body):
 func _on_detection_body_exited(body):
 	if body.has_method("player"):
 		player = null
-		iiiiiiiiiiiiplayer_chase = false
+		player_chase = false
 
 
 func _on_bjørn_hitbox_body_entered(body):
