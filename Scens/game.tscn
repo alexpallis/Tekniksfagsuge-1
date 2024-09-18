@@ -39,10 +39,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
-position = Vector2(358, 194)
+position = Vector2(271, 180)
 
 [node name="ghost" parent="." instance=ExtResource("6_ym1qm")]
-position = Vector2(409, 178)
+position = Vector2(480, 187)
 
 [node name="Coin" parent="." instance=ExtResource("7_msmt4")]
 position = Vector2(684, 173)

@@ -358,7 +358,7 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.25,
 "texture": SubResource("AtlasTexture_qxmr4")
 }, {
 "duration": 1.0,
@@ -415,7 +415,7 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"idl down"
+animation = &"walk left right"
 autoplay = "idl down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

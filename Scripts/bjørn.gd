@@ -5,6 +5,7 @@ var player_chase = false
 var player_shoot = false
 var player_flee = false
 var player = null
+var bjørn_shoot = true
 const knock_back_SPEED = 150
 
 var health = 100
@@ -16,7 +17,7 @@ var can_take_damage = true
 @onready var attack_cooldown_timer = $"attack cooldown timer"
 @onready var attack_timer = $"attack timer"
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	deal_with_damage()
 	
 	if player_chase:
@@ -36,26 +37,26 @@ func _physics_process(delta):
 		if(player.position.y - position.y) > 0:
 			animated_sprite.play("walk down")
 	
-	else:
-		animated_sprite.play("idl down")
-	
 	if player_flee:
-		if player_chase:
-			position += (player.position + position)/SPEED
+		position += (position - player.position)/(SPEED/2)
 
-			if(player.position.x - position.x) < 0 and (player.position.y - position.y) == 0:
-				animated_sprite.flip_h = true
-				animated_sprite.play("walk left right")
+		if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
+			animated_sprite.flip_h = true
+			animated_sprite.play("walk left right")
 
-			if(player.position.x - position.x) > 0 and (player.position.y - position.y) == 0:
-				animated_sprite.flip_h = false
-				animated_sprite.play("walk left right")
+		if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
+			animated_sprite.flip_h = false
+			animated_sprite.play("walk left right")
 
-			if(player.position.y - position.y) < 0:
-				animated_sprite.play("walk up")
+		if(position.y - player.position.y) < 0:
+			animated_sprite.play("walk up")
 
-			if(player.position.y - position.y) > 0:
-				animated_sprite.play("walk down")
+		if(position.y - player.position.y) > 0:
+			animated_sprite.play("walk down")
+
+
+	if player_chase == false and player_flee == false and player_shoot == false:
+		animated_sprite.play("idl down")
 
 
 	move_and_slide()
@@ -114,3 +115,34 @@ func deal_with_damage():
 
 func _on_invin_timer_timeout():
 	can_take_damage = true
+
+
+func _on_attack_timer_timeout():
+	bjørn_shoot = false
+	attack_cooldown_timer.start()
+
+
+func _on_attack_cooldown_timer_timeout():
+	bjørn_shoot = true
+
+func _process(delta):
+	if player_shoot:
+
+		if bjørn_shoot == false:
+			animated_sprite.play("idl down")
+
+		if bjørn_shoot == true:
+			attack_timer.start()
+			if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("shoot left right")
+
+			if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("shoot left right")
+
+			if(position.y - player.position.y) > 0:
+				animated_sprite.play("shoot up")
+
+			if(position.y - player.position.y) < 0:
+				animated_sprite.play("shoot down")
