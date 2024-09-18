@@ -138,3 +138,4 @@ func _on_attack_cooldown_timeout():
 func _on_dael_attack_timer_timeout():
 	global.player_current_attack = false
 	attack_ip = false
+	animated_sprite.play("idl down")

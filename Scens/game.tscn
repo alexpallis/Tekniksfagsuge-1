@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=8 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
 [ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
 [ext_resource type="PackedScene" uid="uid://b2j56x6xi5gfg" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="PackedScene" uid="uid://c7dvp5stlvk2g" path="res://Scens/bjørn.tscn" id="4_3r0b2"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
+[ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
+[ext_resource type="PackedScene" uid="uid://d2vdxfhgw4gh" path="res://Scens/coin.tscn" id="7_msmt4"]
 
 [node name="Game" type="Node2D"]
 
@@ -38,3 +40,9 @@ offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
 position = Vector2(358, 194)
+
+[node name="ghost" parent="." instance=ExtResource("6_ym1qm")]
+position = Vector2(409, 178)
+
+[node name="Coin" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(684, 173)
