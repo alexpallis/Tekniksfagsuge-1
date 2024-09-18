@@ -18,7 +18,6 @@ enum AttackState {
 }
 
 var attack_state = AttackState.CanShoot
-const knock_back_SPEED = 150
 
 var health = 100
 var player_inattack_zone = false
@@ -168,6 +167,9 @@ func _on_invin_timer_timeout():
 
 func _on_attack_timer_timeout():
 	attack_state = AttackState.Cooldown
+	var papir = global.papir_scene.instantiate()
+	papir.position = self.position
+	papirer.add_sibling(papir)
 
 func _on_attack_cooldown_timer_timeout():
 	attack_state = AttackState.CanShoot

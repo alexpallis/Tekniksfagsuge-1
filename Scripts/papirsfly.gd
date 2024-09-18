@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const  SPEED = 1
+const  SPEED = 0.50
 var player_chase = false
 var player = null
 const knock_back_SPEED = 150
@@ -12,11 +12,11 @@ var can_take_damage = true
 
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	deal_with_damage()
 	
 	if player_chase:
-		position += (player.position - position).normalized()*SPEED
+		position += (player.position - position) * SPEED * delta
 		#position += (player.position - position)/(sqrt((player.position - position)*(player.position - position))) * SPEED
 
 		if(player.position.x - position.x) < 0:

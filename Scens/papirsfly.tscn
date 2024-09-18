@@ -46,7 +46,6 @@ radius = 10.6667
 [node name="papirsfly" type="CharacterBody2D"]
 light_mask = 3
 z_index = 2
-scale = Vector2(0.125, 0.125)
 script = ExtResource("1_2m0sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

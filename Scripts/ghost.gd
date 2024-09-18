@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const  SPEED = 100
+const  SPEED = 0.25
 var player_chase = false
 var player = null
 const knock_back_SPEED = 150
@@ -17,7 +17,7 @@ func _physics_process(delta):
 	deal_with_damage()
 	
 	if player_chase:
-		position += (player.position - position)/SPEED
+		position += (player.position - position) * SPEED * delta
 
 		if(player.position.x - position.x) < 0 and (player.position.y - position.y) == 0:
 			animated_sprite.flip_h = true
