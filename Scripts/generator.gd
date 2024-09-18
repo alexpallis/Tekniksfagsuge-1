@@ -39,7 +39,7 @@ func generate(map:TileMap, w:int, h:int, minRoomSize, maxRoomSize):
 	# out of bounds.
 	for r in range(-1, h + 1):
 		for c in range (-1, w + 1):
-			map.set_cell(0, Vector2i(c, r), 0, Vector2i(Tiles.SOLID, 0))
+			map.set_cell(0, Vector2i(c, r), 1, Vector2i(Tiles.SOLID, 0))
 	
 	# Generate potential rooms.
 	for r in potentialRooms:

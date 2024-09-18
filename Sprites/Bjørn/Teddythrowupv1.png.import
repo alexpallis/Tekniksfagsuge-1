@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bptex18xdskgw"
-path="res://.godot/imported/Teddythrowupv1.png-e5117add3e00b2c8bb9044e9d4491b9e.ctex"
+path="res://.godot/imported/Teddythrowupv1.png-e2401a2a57de6cda4e00ef6043561944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teddythrowupv1.png"
-dest_files=["res://.godot/imported/Teddythrowupv1.png-e5117add3e00b2c8bb9044e9d4491b9e.ctex"]
+source_file="res://Sprites/Bjørn/Teddythrowupv1.png"
+dest_files=["res://.godot/imported/Teddythrowupv1.png-e2401a2a57de6cda4e00ef6043561944.ctex"]
 
 [params]
 
