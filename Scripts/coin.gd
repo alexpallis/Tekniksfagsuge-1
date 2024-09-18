@@ -5,7 +5,7 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	coin_noise.play()
 	if body.has_method("player"):
 		game_manager.add_coin()
 		self.queue_free()
+		coin_noise.play()

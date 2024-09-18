@@ -1,9 +1,6 @@
 extends Node2D
 
-var coins = 0
-var kills = 0
 
-@onready var coin_label = $CoinLabel
 
 
 @onready var spawned_enemies = $SpawnedEnemies
