@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hjg0w"]
 
 [node name="MainMenu" type="Node2D"]
-position = Vector2(50, 107)
+position = Vector2(-189, 137)
 scale = Vector2(5.68, 6)
 script = ExtResource("1_hjg0w")
 
