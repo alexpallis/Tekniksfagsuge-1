@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dumtvd5p4yo1g"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_h7st2"]
+[ext_resource type="Texture2D" uid="uid://bfnastodtctc6" path="res://Assets/maxresdefault.png" id="2_yubwf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pj8sm"]
+texture = ExtResource("2_yubwf")
+
+[node name="Game Over" type="CanvasLayer"]
+script = ExtResource("1_h7st2")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.556953, 0.556953, 0.556953, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pj8sm")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 402.0
+offset_top = 53.0
+offset_right = -392.0
+offset_bottom = -504.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.828882, 0, 0.00740039, 0.956863)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 66
+text = "Game Over"
+
+[node name="Retry" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 518.0
+offset_top = 471.0
+offset_right = -556.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.808137, 3.32102e-06, 4.81307e-07, 1)
+theme_override_font_sizes/font_size = 32
+text = "Retry"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 528.0
+offset_top = 545.0
+offset_right = -559.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 33
+text = "Quit"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
