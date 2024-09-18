@@ -41,7 +41,7 @@ radius = 104.0
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jktb3"]
-radius = 8.0
+radius = 10.6667
 
 [node name="papirsfly" type="CharacterBody2D"]
 light_mask = 3
@@ -71,14 +71,14 @@ shape = SubResource("CircleShape2D_acp13")
 [node name="dead area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead area"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_jktb3")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
-[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
 [connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]

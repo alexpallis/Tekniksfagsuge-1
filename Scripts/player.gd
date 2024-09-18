@@ -15,7 +15,7 @@ var attack_ip = false
 @onready var dash_timer = $"dash timer"
 @onready var animated_sprite = $AnimatedSprite
 @onready var attack_cooldown = $"attack cooldown"
-@onready var dael_attack_timer = $"dael attack timer"
+@onready var dael_attack_timer = $"deal attack timer"
 @onready var attack_noise = $"Attack noise"
 @onready var dash_noise = $"Dash noise"
 
@@ -45,10 +45,10 @@ func _physics_process(delta):
 				animated_sprite.flip_h = false
 				animated_sprite.play("dash left right")
 	
-			if direction.y < 0:
+			if direction.y < 0 and direction.x == 0:
 				animated_sprite.play("dash left right")
 	
-			if direction.y > 0:
+			if direction.y > 0 and direction.x == 0:
 				animated_sprite.play("dash left right")
 		else:
 			velocity.x = direction.x * SPEED
@@ -77,7 +77,13 @@ func _physics_process(delta):
 			animated_sprite.play("attack up")
 		if direction.y > 0:
 			animated_sprite.play("attack down")
-			
+		if direction.x < 0 and direction.y == 0:
+			animated_sprite.flip_h = true
+			animated_sprite.play()
+		if direction.x > 0 and direction.y == 0:
+			animated_sprite.flip_h = false
+			animated_sprite.play()
+		
 		global.player_current_attack = true
 		attack_ip = true
 		dael_attack_timer.start()
@@ -121,7 +127,10 @@ func _on_dash_cooldown_timeout():
 
 func  player():
 	pass
-	
+
+func taget():
+	pass
+
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_attack_range = true

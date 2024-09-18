@@ -700,11 +700,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sv07"]
-radius = 34.0
-height = 86.0
+radius = 40.0
+height = 96.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kb8ij"]
-radius = 48.6621
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_co072"]
+radius = 56.0
+height = 128.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.125, 0.125)
@@ -730,7 +731,7 @@ wait_time = 5.0
 [node name="player hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player hitbox"]
-shape = SubResource("CircleShape2D_kb8ij")
+shape = SubResource("CapsuleShape2D_co072")
 
 [node name="attack cooldown" type="Timer" parent="."]
 wait_time = 0.5

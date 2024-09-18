@@ -1,11 +1,23 @@
 extends CharacterBody2D
 
-const  SPEED = 200
-var player_chase = false
-var player_shoot = false
-var player_flee = false
+enum State {
+	None,
+	Chase,
+	Shoot,
+	Flee,
+}
+
+const SPEED = 0.25
+var state = State.None
 var player = null
-var bjørn_shoot = true
+
+enum AttackState {
+	Cooldown,
+	CanShoot,
+	Shooting,
+}
+
+var attack_state = AttackState.CanShoot
 const knock_back_SPEED = 150
 
 var health = 100
@@ -23,81 +35,112 @@ var can_take_damage = true
 #papir.position = self.position
 #papirer.add_child(papir)
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	if player == null:
+		return
+		
 	deal_with_damage()
 	
-	if player_chase:
-		position += (player.position - position)/SPEED
+	print("hello %d" % [Time.get_time_dict_from_system().second])
+	print(AttackState.find_key(attack_state))
 
-		if(player.position.x - position.x) < 0 and (player.position.y - position.y) == 0:
-			animated_sprite.flip_h = true
-			animated_sprite.play("walk left right")
-		
-		if(player.position.x - position.x) > 0 and (player.position.y - position.y) == 0:
-			animated_sprite.flip_h = false
-			animated_sprite.play("walk left right")
-		
-		if(player.position.y - position.y) < 0:
-			animated_sprite.play("walk up")
-		
-		if(player.position.y - position.y) > 0:
-			animated_sprite.play("walk down")
+	var d = player.position - position
 	
-	if player_flee:
-		position += (position - player.position)/(SPEED/2)
+	match state:
+		State.Chase:
+			position += d * SPEED * delta
 
-		if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
-			animated_sprite.flip_h = true
-			animated_sprite.play("walk left right")
+			if -d.x < 0 and -d.y == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("walk left right")
+			
+			if -d.x > 0 and -d.y == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("walk left right")
+			
+			if -d.y < 0:
+				animated_sprite.play("walk up")
+			
+			if -d.y > 0:
+				animated_sprite.play("walk down")
+		
+		State.Flee:
+			position += (position - player.position) * (SPEED / 3) * delta
 
-		if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
-			animated_sprite.flip_h = false
-			animated_sprite.play("walk left right")
+			if d.x < 0 and d.y == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("walk left right")
 
-		if(position.y - player.position.y) < 0:
-			animated_sprite.play("walk up")
+			if d.x > 0 and d.y == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("walk left right")
 
-		if(position.y - player.position.y) > 0:
-			animated_sprite.play("walk down")
+			if d.y < 0:
+				animated_sprite.play("walk up")
 
+			if d.y > 0:
+				animated_sprite.play("walk down")
 
-	if player_chase == false and player_flee == false and player_shoot == false:
-		animated_sprite.play("idl down")
+		State.Shoot:
+			match attack_state:
+				AttackState.CanShoot:
+					attack_state = AttackState.Shooting
+					attack_timer.start()
+					attack_cooldown_timer.start()
+					
+				AttackState.Shooting:
+					if -d.x > 0 and -d.y == 0:
+						animated_sprite.flip_h = true
+						animated_sprite.play("shoot left right")
+
+					if -d.x < 0 and -d.y == 0:
+						animated_sprite.flip_h = false
+						animated_sprite.play("shoot left right")
+
+					if -d.y > 0:
+						animated_sprite.play("shoot up")
+
+					if -d.y < 0:
+						animated_sprite.play("shoot down")
+						
+				_:
+					animated_sprite.play("idl down")
+					
+		State.None:
+			animated_sprite.play("idl down")
 
 
 	move_and_slide()
 func _on_flee_area_body_entered(body):
 	if body.has_method("player"):
-		player_flee = true
-		player_shoot = false
+		state = State.Flee
 
 
 func _on_flee_area_body_exited(body):
 	if body.has_method("player"):
-		player_flee = false
-		player_shoot = true
+		state = State.Shoot
 
 func _on_attack_area_body_entered(body):
 	if body.has_method("player"):
-		player_chase = false
-		player_shoot = true
+		state = State.Shoot
+
 
 
 func _on_attack_area_body_exited(body):
 	if body.has_method("player"):
-		player_chase = true
-		player_shoot = false
+		state = State.Chase
+
 
 
 func _on_detection_body_entered(body):
 	if body.has_method("player"):
 		player = body
-		player_chase = true
+		state = State.Chase
 
 func _on_detection_body_exited(body):
 	if body.has_method("player"):
 		player = null
-	player_chase = false
+		state = State.None
 
 
 func _on_bjørn_hitbox_body_entered(body):
@@ -124,32 +167,7 @@ func _on_invin_timer_timeout():
 
 
 func _on_attack_timer_timeout():
-	bjørn_shoot = false
-	attack_cooldown_timer.start()
-	
-
+	attack_state = AttackState.Cooldown
 
 func _on_attack_cooldown_timer_timeout():
-	bjørn_shoot = true
-
-func _process(delta):
-	if player_shoot:
-
-		if bjørn_shoot == false:
-			animated_sprite.play("idl down")
-
-		if bjørn_shoot == true:
-			attack_timer.start()
-			if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
-				animated_sprite.flip_h = true
-				animated_sprite.play("shoot left right")
-
-			if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
-				animated_sprite.flip_h = false
-				animated_sprite.play("shoot left right")
-
-			if(position.y - player.position.y) > 0:
-				animated_sprite.play("shoot up")
-
-			if(position.y - player.position.y) < 0:
-				animated_sprite.play("shoot down")
+	attack_state = AttackState.CanShoot

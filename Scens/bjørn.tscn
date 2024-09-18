@@ -419,7 +419,7 @@ shape = SubResource("CapsuleShape2D_1wght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"shoot up"
+animation = &"idl down"
 autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
