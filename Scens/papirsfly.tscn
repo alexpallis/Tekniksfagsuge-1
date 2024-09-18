@@ -44,10 +44,13 @@ radius = 8.0
 radius = 8.0
 
 [node name="papirsfly" type="CharacterBody2D"]
+light_mask = 3
+z_index = 2
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_2m0sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_0bt5y")
 animation = &"fly left right"
@@ -73,9 +76,9 @@ shape = SubResource("CircleShape2D_jktb3")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
 [connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
-[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
 [connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]

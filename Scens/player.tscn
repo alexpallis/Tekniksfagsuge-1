@@ -710,6 +710,7 @@ collision_layer = 3
 script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_x8j3y")
 animation = &"dash down"
 autoplay = "idl down"
