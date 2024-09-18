@@ -109,7 +109,7 @@ func _on_detection_body_entered(body):
 func _on_detection_body_exited(body):
 	if body.has_method("player"):
 		player = null
-	player_chase = false
+		iiiiiiiiiiiiplayer_chase = false
 
 
 func _on_bjørn_hitbox_body_entered(body):
@@ -138,7 +138,6 @@ func _on_invin_timer_timeout():
 func _on_attack_timer_timeout():
 	bjørn_shoot = false
 	attack_cooldown_timer.start()
-	self.add_child(papirsfly)
 	print("nu idl")
 
 

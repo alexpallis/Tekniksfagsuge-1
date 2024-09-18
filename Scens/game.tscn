@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=9 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_ymc8k"]
 [ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_lnum0"]
 [ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
 [ext_resource type="PackedScene" uid="uid://d2vdxfhgw4gh" path="res://Scens/coin.tscn" id="7_msmt4"]
+[ext_resource type="PackedScene" uid="uid://cyhvuoq7ais2u" path="res://Scens/papirsfly.tscn" id="8_o685w"]
 
 [node name="Game" type="Node2D"]
 
@@ -44,4 +45,54 @@ position = Vector2(269, 187)
 position = Vector2(480, 187)
 
 [node name="Coin" parent="." instance=ExtResource("7_msmt4")]
-position = Vector2(684, 173)
+position = Vector2(634, 167)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin7" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(675, 182)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin8" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(667, 160)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin9" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(716, 160)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin10" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(668, 134)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin11" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(691, 190)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin2" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(700, 134)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin3" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(660, 177)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin4" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(624, 183)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin5" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(645, 195)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin6" parent="." instance=ExtResource("7_msmt4")]
+position = Vector2(651, 149)
+scale = Vector2(0.1, 0.1)
+
+[node name="papirsfly" parent="." instance=ExtResource("8_o685w")]
+position = Vector2(299, 188)
+
+[node name="papirsfly2" parent="." instance=ExtResource("8_o685w")]
+position = Vector2(375, 201)
+
+[node name="papirsfly3" parent="." instance=ExtResource("8_o685w")]
+position = Vector2(326, 106)

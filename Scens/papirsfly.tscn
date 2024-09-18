@@ -32,18 +32,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vr7s2"]
-radius = 613.0
+radius = 1683.73
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfxn"]
-radius = 50.04
+radius = 104.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_acp13"]
-radius = 8.06226
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jktb3"]
-radius = 14.0
+radius = 8.0
 
 [node name="papirsfly" type="CharacterBody2D"]
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_2m0sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -56,9 +57,9 @@ animation = &"fly left right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_vr7s2")
 
-[node name="papirsly hitbox" type="Area2D" parent="."]
+[node name="papirsfly hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="papirsly hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papirsfly hitbox"]
 shape = SubResource("CircleShape2D_kjfxn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -67,11 +68,14 @@ shape = SubResource("CircleShape2D_acp13")
 [node name="dead area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead area"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_jktb3")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
-[connection signal="body_exited" from="papirsly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
 [connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]

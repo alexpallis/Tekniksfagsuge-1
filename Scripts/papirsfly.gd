@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const  SPEED = 100
+const  SPEED = 0.5
 var player_chase = false
 var player = null
 const knock_back_SPEED = 150
@@ -16,7 +16,7 @@ func _physics_process(delta):
 	deal_with_damage()
 	
 	if player_chase:
-		position += (player.position - position)/SPEED
+		position += (player.position - position).normalized()*SPEED
 		#position += (player.position - position)/(sqrt((player.position - position)*(player.position - position))) * SPEED
 
 		if(player.position.x - position.x) < 0:
@@ -44,17 +44,17 @@ func _on_detection_body_entered(body):
 func _on_detection_body_exited(body):
 	if body.has_method("player"):
 		player = null
-	player_chase = false
+		player_chase = false
 
 func enemy():
 	pass
 
 
-func _on_ghost_hitbox_body_entered(body):
+func _on_papirsfly_hitbox_body_entered(body):
 	if body.has_method("player"):
 		player_inattack_zone = true
 
-func _on_ghost_hitbox_body_exited(body):
+func _on_papirsfly_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
 
@@ -62,8 +62,7 @@ func deal_with_damage():
 	if player_inattack_zone and global.player_current_attack == true:
 		if can_take_damage == true:
 			health = health - 20
-			can_take_damage = false
-			print("ghost health =", health)
+			print("papirsfly health =", health)
 			if health <= 0:
 				self.queue_free()
 	
