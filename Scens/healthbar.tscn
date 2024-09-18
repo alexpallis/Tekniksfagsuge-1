@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8oaeiapgos7d"]
 
-[ext_resource type="Script" path="res://healthbar.gd" id="1_lorjq"]
+[ext_resource type="Script" path="res://Scripts/healthbar.gd" id="1_lorjq"]
 [ext_resource type="Texture2D" uid="uid://cofpp1w4o6ct" path="res://Sprites/Player/frontidleboogie.png" id="2_tuxlc"]
 
 [node name="Healthbar" type="Node2D"]
