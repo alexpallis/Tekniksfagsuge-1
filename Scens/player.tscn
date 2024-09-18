@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://c5lfgfc63k71o"]
+[gd_scene load_steps=96 format=3 uid="uid://c5lfgfc63k71o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xhu21"]
 [ext_resource type="Texture2D" uid="uid://b8ywdqrl6jxad" path="res://Sprites/Player/Bogiedashv2.png" id="2_1h2wp"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b2yudq6tqdqp1" path="res://Sprites/Player/Bootywalkv2-Sheet.png" id="5_66qcf"]
 [ext_resource type="Texture2D" uid="uid://cohtb45u8fb3q" path="res://Sprites/Player/BoogiemanWalk11.png" id="6_7e5s8"]
 [ext_resource type="Texture2D" uid="uid://b0b8asl84lpr0" path="res://Sprites/Player/bootiewalk3.png" id="7_6ipvm"]
+[ext_resource type="AudioStream" uid="uid://qn6oru0gl88r" path="res://Assets/slashsound1.mp3" id="11_jerwk"]
+[ext_resource type="AudioStream" uid="uid://cw6mf82ieocaf" path="res://Assets/dashsound1.mp3" id="12_76ki8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5fms"]
 atlas = ExtResource("2_ff7n8")
@@ -734,6 +736,12 @@ shape = SubResource("CircleShape2D_kb8ij")
 wait_time = 0.5
 
 [node name="dael attack timer" type="Timer" parent="."]
+
+[node name="Attack noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_jerwk")
+
+[node name="Dash noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_76ki8")
 
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash cooldown timer" to="." method="_on_dash_cooldown_timeout"]

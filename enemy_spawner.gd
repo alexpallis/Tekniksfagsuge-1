@@ -6,10 +6,6 @@ var kills = 0
 @onready var coin_label = $CoinLabel
 
 
-func add_coin():
-	coins += 1
-	coin_label.text = str(coins) + "Coins"
-
 @onready var spawned_enemies = $SpawnedEnemies
 @onready var tilemap = $"../RandomDungeon"
 @onready var spawned_coins = $SpawnedCoins

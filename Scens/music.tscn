@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvt1dl8orpk3"]
+
+[ext_resource type="AudioStream" uid="uid://dtnqkcsc3n88k" path="res://Assets/boogiemaninstrumental.mp3" id="1_f3vd8"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_f3vd8")
+volume_db = 5.012
+autoplay = true
