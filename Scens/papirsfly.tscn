@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://cyhvuoq7ais2u"]
+[gd_scene load_steps=11 format=3 uid="uid://cyhvuoq7ais2u"]
+
+[ext_resource type="Script" path="res://Scripts/papirsfly.gd" id="1_2m0sv"]
+[ext_resource type="Texture2D" uid="uid://6fkrgwjj6po5" path="res://Sprites/papirsfly/paperplane1.png" id="2_k71y2"]
+[ext_resource type="Texture2D" uid="uid://ijh1gob15i5u" path="res://Sprites/papirsfly/paperplanetop.png" id="3_1rbpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efucv"]
+atlas = ExtResource("2_k71y2")
+region = Rect2(0, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv6hp"]
+atlas = ExtResource("3_1rbpj")
+region = Rect2(0, 0, 150, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bt5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efucv")
+}],
+"loop": true,
+"name": &"fly left right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv6hp")
+}],
+"loop": true,
+"name": &"fly up down",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr7s2"]
+radius = 613.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjfxn"]
+radius = 50.04
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_acp13"]
+radius = 8.06226
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jktb3"]
+radius = 14.0
 
 [node name="papirsfly" type="CharacterBody2D"]
+script = ExtResource("1_2m0sv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_0bt5y")
+animation = &"fly left right"
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+shape = SubResource("CircleShape2D_vr7s2")
+
+[node name="papirsly hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papirsly hitbox"]
+shape = SubResource("CircleShape2D_kjfxn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_acp13")
+
+[node name="dead area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dead area"]
+shape = SubResource("CircleShape2D_jktb3")
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="papirsly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
+[connection signal="body_exited" from="papirsly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
+[connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]

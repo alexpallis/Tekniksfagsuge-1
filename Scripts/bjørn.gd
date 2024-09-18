@@ -16,6 +16,7 @@ var can_take_damage = true
 @onready var invin_timer = $"invin timer"
 @onready var attack_cooldown_timer = $"attack cooldown timer"
 @onready var attack_timer = $"attack timer"
+@onready var papirsfly = $"."
 
 func _physics_process(_delta):
 	deal_with_damage()
@@ -54,8 +55,25 @@ func _physics_process(_delta):
 		if(position.y - player.position.y) > 0:
 			animated_sprite.play("walk down")
 
+	if bjørn_shoot:
 
-	if player_chase == false and player_flee == false and player_shoot == false:
+		if player_shoot == true:
+			attack_timer.start()
+			if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
+				animated_sprite.flip_h = true
+				animated_sprite.play("shoot left right")
+
+			if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
+				animated_sprite.flip_h = false
+				animated_sprite.play("shoot left right")
+
+			if(position.y - player.position.y) > 0:
+				animated_sprite.play("shoot up")
+
+			if(position.y - player.position.y) < 0:
+				animated_sprite.play("shoot down")
+
+	if player_chase == false and player_flee == false and bjørn_shoot == false:
 		animated_sprite.play("idl down")
 
 
@@ -120,29 +138,12 @@ func _on_invin_timer_timeout():
 func _on_attack_timer_timeout():
 	bjørn_shoot = false
 	attack_cooldown_timer.start()
+	self.add_child(papirsfly)
+	print("nu idl")
 
 
 func _on_attack_cooldown_timer_timeout():
 	bjørn_shoot = true
+	print("nu skyd")
 
-func _process(delta):
-	if player_shoot:
-
-		if bjørn_shoot == false:
-			animated_sprite.play("idl down")
-
-		if bjørn_shoot == true:
-			attack_timer.start()
-			if(position.x - player.position.x) > 0 and (position.y - player.position.y) == 0:
-				animated_sprite.flip_h = true
-				animated_sprite.play("shoot left right")
-
-			if(position.x - player.position.x) < 0 and (position.y - player.position.y) == 0:
-				animated_sprite.flip_h = false
-				animated_sprite.play("shoot left right")
-
-			if(position.y - player.position.y) > 0:
-				animated_sprite.play("shoot up")
-
-			if(position.y - player.position.y) < 0:
-				animated_sprite.play("shoot down")
+#func taget():

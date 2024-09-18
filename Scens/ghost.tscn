@@ -436,8 +436,8 @@ shape = SubResource("CapsuleShape2D_60gcc")
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_entered"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
-[connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
+[connection signal="body_entered" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_entered"]
 [connection signal="body_exited" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_exited"]
+[connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]

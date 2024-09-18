@@ -13,10 +13,9 @@
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
 
 [node name="Player" parent="." instance=ExtResource("1_ymc8k")]
-position = Vector2(374, 195)
+position = Vector2(373, 157)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-5, -49)
 zoom = Vector2(4, 4)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -39,7 +38,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Bjørn" parent="." instance=ExtResource("4_3r0b2")]
-position = Vector2(271, 180)
+position = Vector2(269, 187)
 
 [node name="ghost" parent="." instance=ExtResource("6_ym1qm")]
 position = Vector2(480, 187)

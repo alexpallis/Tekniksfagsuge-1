@@ -116,6 +116,9 @@ func _on_dash_cooldown_timeout():
 
 func  player():
 	pass
+
+func taget():
+	pass
 	
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
