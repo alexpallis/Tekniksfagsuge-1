@@ -1,10 +1,13 @@
 extends CanvasLayer
 
-const MaxHP = 100
-var health = MaxHP
+@export var health
 
+
+
+pass
 func _ready() -> void:
 	$healthbar.max_value = MaxHP
+pass
 
 
 func update_health_ui() -> void:

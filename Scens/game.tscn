@@ -37,7 +37,7 @@ offset_bottom = 23.0
 [node name="healthbar" type="CanvasLayer" parent="."]
 script = ExtResource("7_w88ed")
 
-[node name="healthbar" type="ProgressBar" parent="healthbar"]
+[node name="healthbar2" type="ProgressBar" parent="healthbar"]
 offset_right = 198.0
 offset_bottom = 27.0
 step = 1.0
@@ -45,7 +45,7 @@ value = 100.0
 show_percentage = false
 script = ExtResource("8_a0nlb")
 
-[node name="healthlabel" type="Label" parent="healthbar/healthbar"]
+[node name="healthlabel2" type="Label" parent="healthbar/healthbar2"]
 layout_mode = 0
 offset_left = 65.0
 offset_top = 4.0

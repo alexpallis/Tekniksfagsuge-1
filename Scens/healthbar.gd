@@ -1,4 +1,4 @@
-extends ProgressBar
+#extends ProgressBar
 
 #@export var player = Player
 
