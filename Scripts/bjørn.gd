@@ -66,7 +66,7 @@ func _physics_process(delta):
 				animated_sprite.play("walk down")
 		
 		State.Flee:
-			position += (position - player.position) * SPEED*2 * delta
+			position += (position - player.position) * SPEED * 2 * delta
 
 			if d.x < 0 and d.y == 0:
 				animated_sprite.flip_h = true

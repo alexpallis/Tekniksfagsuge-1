@@ -3,26 +3,43 @@ extends CharacterBody2D
 var speed = 0.75
 var player_chase = false
 var player = null
-var player_hittable = false
+var player_hittable = true
 var health = 30
 var player_inattack_zone = false
 var can_take_damage = true
+var attack_zone = false
 
-@onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var timer = $Timer
+@onready var animated_sprite = $AnimatedSprite2D
 @onready var Player = $Player
-@onready var cooldown = $Cooldown
 @onready var invin_timer = $"invin timer"
 
 
 func _physics_process(delta):
 	deal_with_damage()
-	
+
+
+
+
+
 	if player_chase:
 		position += (player.position - position) * speed * delta
+		if (player.position.x - position.x) > 0:
+			animated_sprite.flip_h = false
+			animated_sprite.play("run")
+		if (player.position.x - position.x) < 0:
+			animated_sprite.flip_h = true
+			animated_sprite.play("run")
 	
-	animated_sprite_2d.play("run")
-	
+	if attack_zone:
+		position += (player.position - position) * speed * delta
+		if (player.position.x - position.x) > 0:
+			animated_sprite.flip_h = false
+			animated_sprite.play("attack")
+		if (player.position.x - position.x) < 0:
+			animated_sprite.flip_h = true
+			animated_sprite.play("attack")
+
+
 	move_and_slide()
 
 
@@ -40,12 +57,14 @@ func _on_detection_body_exited(body):
 
 func _on_hitbox_body_entered(body):
 	if body.has_method("player"):
-		player_hittable = true
+		attack_zone = true
+		player_chase = false
 
 
 func _on_hitbox_body_exited(body):
 	if body.has_method("player"):
-		player_hittable = false
+		attack_zone = false
+		player_chase = true
 
 
 func deal_with_damage():

@@ -4,35 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://dscb2c3ac6rf" path="res://Sprites/Gumball/Gumhit1.png" id="2_cuxi8"]
 [ext_resource type="Texture2D" uid="uid://bvnp2ycer23iw" path="res://Sprites/Gumball/gumrunv1.png" id="2_essqp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p62hc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn3al"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(0, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7jx6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_igyw0"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(150, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8j68"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_twvlo"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(300, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_msri5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5px"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(450, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqe1y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4c13"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(600, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_14vlq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq5j1"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(750, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbr3y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_48r80"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(900, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_my2s1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d24dk"]
 atlas = ExtResource("2_cuxi8")
 region = Rect2(1050, 0, 150, 120)
 
@@ -56,28 +56,34 @@ region = Rect2(450, 0, 150, 120)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p62hc")
+"texture": SubResource("AtlasTexture_jn3al")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e7jx6")
+"texture": SubResource("AtlasTexture_igyw0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8j68")
+"texture": SubResource("AtlasTexture_twvlo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_msri5")
+"texture": SubResource("AtlasTexture_gs5px")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hqe1y")
+"texture": SubResource("AtlasTexture_r4c13")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_14vlq")
+"texture": SubResource("AtlasTexture_tq5j1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dbr3y")
+"texture": SubResource("AtlasTexture_48r80")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_my2s1")
+"texture": SubResource("AtlasTexture_d24dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48r80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn3al")
 }],
 "loop": true,
 "name": &"attack",
@@ -122,7 +128,8 @@ script = ExtResource("1_mjfny")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_18hqo")
-animation = &"attack"
+animation = &"run"
+frame_progress = 0.924259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vb805")
@@ -139,12 +146,6 @@ shape = SubResource("CircleShape2D_g3hjy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_x8tum")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="Cooldown" type="Timer" parent="."]
-wait_time = 0.5
-
 [node name="Attack Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
@@ -155,6 +156,5 @@ shape = SubResource("CircleShape2D_rslur")
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Attack Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack Area" to="." method="_on_attack_area_body_exited"]
