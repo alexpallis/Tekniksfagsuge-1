@@ -405,7 +405,6 @@ radius = 112.0
 height = 224.0
 
 [node name="ghost" type="CharacterBody2D"]
-scale = Vector2(0.125, 0.125)
 script = ExtResource("1_0jb3i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

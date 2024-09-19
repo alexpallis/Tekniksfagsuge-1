@@ -37,7 +37,7 @@ func _ready():
 		var spawnable = tilemap.get_cell_source_id(0,random_position)
 		if spawnable == 0:
 			var player = global.player_scene.instantiate()
-			player.position = tilemap.map_to_local(random_position) + Vector2(16, 16) / 2
+			player.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
 			random_dungeon.add_child(player)
 			player_count += 1
 	
@@ -46,7 +46,7 @@ func _ready():
 		var spawnable = tilemap.get_cell_source_id(0,random_position)
 		if spawnable == 0:
 			var enemyb = global.bjørn_scene.instantiate()
-			enemyb.position = tilemap.map_to_local(random_position) + Vector2(16, 16) / 2
+			enemyb.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
 			spawned_enemies.add_child(enemyb)
 			benemy_count += 1
 			
@@ -57,7 +57,7 @@ func _ready():
 		var spawnable = tilemap.get_cell_source_id(0,random_position)
 		if spawnable == 0:
 			var coins = global.coin_scene.instantiate()
-			coins.position = tilemap.map_to_local(random_position) + Vector2(16, 16) / 2
+			coins.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
 			spawned_coins.add_child(coins)
 			coin_count += 1
 			
@@ -69,7 +69,7 @@ func _ready():
 		var spawnable = tilemap.get_cell_source_id(0,random_position)
 		if spawnable == 0:
 			var enemyg = global.gumball_scene.instantiate()
-			enemyg.position = tilemap.map_to_local(random_position) + Vector2(16, 16) / 2
+			enemyg.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
 			spawned_enemies.add_child(enemyg)
 			genemy_count += 1
 		
