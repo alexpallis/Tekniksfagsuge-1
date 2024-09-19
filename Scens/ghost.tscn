@@ -405,7 +405,6 @@ radius = 112.0
 height = 224.0
 
 [node name="ghost" type="CharacterBody2D"]
-scale = Vector2(0.125, 0.125)
 script = ExtResource("1_0jb3i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -438,6 +437,6 @@ shape = SubResource("CapsuleShape2D_60gcc")
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_entered"]
-[connection signal="body_exited" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_exited"]
 [connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
+[connection signal="body_exited" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_exited"]
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]

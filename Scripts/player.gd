@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
-const SPEED = 40
-const DASH_SPEED = 110
+const SPEED = 130
+const DASH_SPEED = 500
 var dashing = false 
 var enemy_attack_range = false
 var enemy_attack_cooldown =true

@@ -115,7 +115,6 @@ radius = 118.119
 
 [node name="Gumball" type="CharacterBody2D"]
 z_index = 2
-scale = Vector2(0.125, 0.125)
 script = ExtResource("1_mjfny")
 
 [node name="invin timer" type="Timer" parent="."]
