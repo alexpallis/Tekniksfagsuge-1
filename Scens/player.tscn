@@ -1372,6 +1372,9 @@ shape = SubResource("CapsuleShape2D_muwvh")
 
 [node name="Slash cooldown timer" type="Timer" parent="."]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash cooldown timer" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="body_entered" from="player hitbox" to="." method="_on_player_hitbox_body_entered"]
