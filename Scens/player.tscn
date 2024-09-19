@@ -781,7 +781,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack down",
-"speed": 37.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -882,7 +882,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack left right",
-"speed": 32.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -971,7 +971,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack up",
-"speed": 29.0
+"speed": 20.0
 }, {
 "frames": [],
 "loop": false,
@@ -1342,10 +1342,8 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"attack left right"
+animation = &"attack down"
 autoplay = "idl down"
-frame = 31
-frame_progress = 1.0
 
 [node name="dash timer" type="Timer" parent="."]
 
@@ -1358,9 +1356,10 @@ wait_time = 5.0
 shape = SubResource("CapsuleShape2D_co072")
 
 [node name="attack cooldown" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.262
 
 [node name="dael attack timer" type="Timer" parent="."]
+wait_time = 0.133
 
 [node name="Attack noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_jerwk")
