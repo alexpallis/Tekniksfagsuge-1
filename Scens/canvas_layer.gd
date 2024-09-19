@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const MaxHP = 3
+const MaxHP = 100
 var health = MaxHP
 
 func _ready() -> void:

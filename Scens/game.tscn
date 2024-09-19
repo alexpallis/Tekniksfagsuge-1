@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=10 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
 [ext_resource type="PackedScene" uid="uid://b2j56x6xi5gfg" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
 [ext_resource type="Script" path="res://Scens/canvas_layer.gd" id="7_w88ed"]
 [ext_resource type="Script" path="res://Scens/healthbar.gd" id="8_a0nlb"]
+[ext_resource type="Script" path="res://Scens/pause_menu.gd" id="9_4mp1y"]
 [ext_resource type="PackedScene" uid="uid://b2htcgmpe4a5h" path="res://Scens/Enemy spawner.tscn" id="9_bi6br"]
 [ext_resource type="PackedScene" uid="uid://brvt1dl8orpk3" path="res://Scens/music.tscn" id="10_n7osx"]
 
@@ -50,3 +51,54 @@ offset_left = 65.0
 offset_top = 4.0
 offset_right = 105.0
 offset_bottom = 27.0
+
+[node name="pauseNode" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Control" parent="pauseNode" node_paths=PackedStringArray("enemy_spawner")]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_4mp1y")
+enemy_spawner = NodePath("../../EnemySpawner")
+
+[node name="Panel" type="Panel" parent="pauseNode/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -54.0
+offset_right = 75.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseNode/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="pauseNode/PauseMenu/Panel/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+text = "Pause"
+
+[node name="Resumebutton" type="Button" parent="pauseNode/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quitbutton" type="Button" parent="pauseNode/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="pauseNode/PauseMenu/Panel/VBoxContainer/Resumebutton" to="pauseNode/PauseMenu" method="_on_resumebutton_pressed"]
+[connection signal="pressed" from="pauseNode/PauseMenu/Panel/VBoxContainer/Quitbutton" to="pauseNode/PauseMenu" method="_on_quitbutton_pressed"]
