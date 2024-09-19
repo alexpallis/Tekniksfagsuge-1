@@ -282,7 +282,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot down",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -308,7 +308,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot left right",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -334,7 +334,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot up",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -419,7 +419,7 @@ shape = SubResource("CapsuleShape2D_1wght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"idl down"
+animation = &"shoot up"
 autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
@@ -457,6 +457,9 @@ shape = SubResource("CircleShape2D_nlp04")
 
 [node name="Papirer" type="Node2D" parent="."]
 
+[node name="papirsfly timer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="bjørn hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
@@ -468,3 +471,4 @@ shape = SubResource("CircleShape2D_nlp04")
 [connection signal="body_exited" from="attack area" to="." method="_on_attack_area_body_exited"]
 [connection signal="body_entered" from="flee area" to="." method="_on_flee_area_body_entered"]
 [connection signal="body_exited" from="flee area" to="." method="_on_flee_area_body_exited"]
+[connection signal="timeout" from="papirsfly timer" to="." method="_on_papirsfly_timer_timeout"]

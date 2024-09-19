@@ -38,11 +38,11 @@ func _physics_process(delta):
 			velocity.x = direction.x * DASH_SPEED
 			velocity.y = direction.y * DASH_SPEED
 			
-			if direction.x < 0 and direction.y == 0:
+			if direction.x < 0:
 				animated_sprite.flip_h = true
 				animated_sprite.play("dash left right")
 	
-			if direction.x > 0 and direction.y == 0:
+			if direction.x > 0:
 				animated_sprite.flip_h = false
 				animated_sprite.play("dash left right")
 	

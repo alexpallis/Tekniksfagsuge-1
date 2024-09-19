@@ -22,12 +22,14 @@ var attack_state = AttackState.CanShoot
 var health = 100
 var player_inattack_zone = false
 var can_take_damage = true
+var papirsfly_shoot = true
 
 @onready var papirer = $Papirer
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var invin_timer = $"invin timer"
 @onready var attack_cooldown_timer = $"attack cooldown timer"
 @onready var attack_timer = $"attack timer"
+@onready var papirsfly_timer = $"papirsfly timer"
 
 #Hvor skal jeg placere dette kode, kan ikke finde rundt i dette.
 #var papir = global.papir_scene.instantiate()
@@ -86,6 +88,7 @@ func _physics_process(delta):
 					attack_state = AttackState.Shooting
 					attack_timer.start()
 					attack_cooldown_timer.start()
+
 					
 				AttackState.Shooting:
 					if -d.x > 0 and -d.y == 0:
@@ -101,7 +104,7 @@ func _physics_process(delta):
 
 					if -d.y < 0:
 						animated_sprite.play("shoot down")
-						
+
 				_:
 					animated_sprite.play("idl down")
 					
@@ -167,9 +170,17 @@ func _on_invin_timer_timeout():
 
 func _on_attack_timer_timeout():
 	attack_state = AttackState.Cooldown
-	var papir = global.papir_scene.instantiate()
-	papir.position = self.position
-	papirer.add_sibling(papir)
+	if papirsfly_shoot == true:
+		var papir = global.papir_scene.instantiate()
+		papir.position = self.position
+		papirer.add_sibling(papir)
+		print("hi %d" % [Time.get_time_dict_from_system().second])
+		papirsfly_timer.start()
+		papirsfly_shoot = false
 
 func _on_attack_cooldown_timer_timeout():
 	attack_state = AttackState.CanShoot
+
+
+func _on_papirsfly_timer_timeout():
+	papirsfly_shoot = true
