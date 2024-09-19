@@ -18,6 +18,7 @@ var attack_ip = false
 @onready var dael_attack_timer = $"dael attack timer"
 @onready var attack_noise = $"Attack noise"
 @onready var dash_noise = $"Dash noise"
+@onready var slash_cooldown_timer = $"Slash cooldown timer"
 
 
 func _physics_process(delta):
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	var direction = Input.get_vector("move left","move right","move up","move down")
 	
 	if direction:
-		if dashing:
+		if dashing and attack_ip == false:
 			velocity.x = direction.x * DASH_SPEED
 			velocity.y = direction.y * DASH_SPEED
 			
@@ -54,20 +55,20 @@ func _physics_process(delta):
 		else:
 			velocity.x = direction.x * SPEED
 			velocity.y = direction.y * SPEED
-			
-			if direction.x < 0 and direction.y == 0:
-				animated_sprite.flip_h = true
-				animated_sprite.play("walk left right")
+			if attack_ip == false:
+				if direction.x < 0 and direction.y == 0:
+					animated_sprite.flip_h = true
+					animated_sprite.play("walk left right")
 	
-			if direction.x > 0 and direction.y == 0:
-				animated_sprite.flip_h = false
-				animated_sprite.play("walk left right")
+				if direction.x > 0 and direction.y == 0:
+					animated_sprite.flip_h = false
+					animated_sprite.play("walk left right")
 	
-			if direction.y < 0:
-				animated_sprite.play("walk up")
+				if direction.y < 0:
+					animated_sprite.play("walk up")
 	
-			if direction.y > 0:
-				animated_sprite.play("walk down")
+				if direction.y > 0:
+					animated_sprite.play("walk down")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -80,10 +81,10 @@ func _physics_process(delta):
 			animated_sprite.play("attack down")
 		if direction.x < 0 and direction.y == 0:
 			animated_sprite.flip_h = true
-			animated_sprite.play()
+			animated_sprite.play("attack left right")
 		if direction.x > 0 and direction.y == 0:
 			animated_sprite.flip_h = false
-			animated_sprite.play()
+			animated_sprite.play("attack left right")
 		
 		global.player_current_attack = true
 		attack_ip = true
@@ -153,3 +154,7 @@ func _on_attack_cooldown_timeout():
 func _on_dael_attack_timer_timeout():
 	global.player_current_attack = false
 	attack_ip = false
+
+
+func _on_slash_cooldown_timer_timeout():
+	pass # Replace with function body.
