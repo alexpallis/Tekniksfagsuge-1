@@ -115,7 +115,7 @@ func _physics_process(delta):
 			animated_sprite.play("idl up")
 		
 		if Input.is_action_pressed("move down") and Input.is_action_pressed("move up") or Input.is_action_pressed("move left") and Input.is_action_pressed("move right"):
-			animated_sprite.play("idl down")
+			animated_sprite.play("dance")
 
 	if (sqrt(velocity.x*velocity.x)) > SPEED:
 		animated_sprite.play("dash left right")
