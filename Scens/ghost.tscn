@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://k6hy3xpblfo2"]
+[gd_scene load_steps=61 format=3 uid="uid://k6hy3xpblfo2"]
 
 [ext_resource type="Script" path="res://Scripts/ghost.gd" id="1_0jb3i"]
 [ext_resource type="Texture2D" uid="uid://dovqut03sajmu" path="res://Sprites/Bjørn/teddyfront.png" id="2_67gw5"]
@@ -10,10 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c6plonfd1bc22" path="res://Sprites/Bjørn/teddyfrontwalk1.png" id="8_shale"]
 [ext_resource type="Texture2D" uid="uid://ci7x12uk2vv2u" path="res://Sprites/Bjørn/teddywalksid.png" id="9_21wkg"]
 [ext_resource type="Texture2D" uid="uid://caufl7io57v1v" path="res://Sprites/Bjørn/teddybackwalk1.png" id="10_s0pao"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
-radius = 20.0
-height = 104.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wj5s"]
 atlas = ExtResource("2_67gw5")
@@ -406,9 +402,6 @@ height = 224.0
 
 [node name="ghost" type="CharacterBody2D"]
 script = ExtResource("1_0jb3i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_1wght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.389026, 0.921421, 0.92031, 0.384314)

@@ -1305,7 +1305,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk left right",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1342,9 +1342,9 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"walk up"
+animation = &"walk left right"
 autoplay = "idl down"
-frame_progress = 0.152141
+frame_progress = 0.63208
 
 [node name="dash timer" type="Timer" parent="."]
 
