@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://k6hy3xpblfo2"]
+[gd_scene load_steps=62 format=3 uid="uid://k6hy3xpblfo2"]
 
 [ext_resource type="Script" path="res://Scripts/ghost.gd" id="1_0jb3i"]
 [ext_resource type="Texture2D" uid="uid://dovqut03sajmu" path="res://Sprites/Bjørn/teddyfront.png" id="2_67gw5"]
@@ -400,6 +400,9 @@ radius = 373.484
 radius = 112.0
 height = 224.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylxyp"]
+radius = 1.0
+
 [node name="ghost" type="CharacterBody2D"]
 script = ExtResource("1_0jb3i")
 
@@ -426,10 +429,13 @@ shape = SubResource("CapsuleShape2D_60gcc")
 
 [node name="invin timer" type="Timer" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ylxyp")
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_entered"]
-[connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
 [connection signal="body_exited" from="ghost hitbox" to="." method="_on_bjørn_hitbox_body_exited"]
+[connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
