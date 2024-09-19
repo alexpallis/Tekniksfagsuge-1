@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 40
 const DASH_SPEED = 110
 var dashing = false 
@@ -11,6 +13,9 @@ var dash_cooldown = true
 
 var attack_ip = false
 
+#healthbar related
+signal healthChanged
+
 @onready var dash_cooldown_timer = $"dash cooldown timer"
 @onready var dash_timer = $"dash timer"
 @onready var animated_sprite = $AnimatedSprite
@@ -19,6 +24,8 @@ var attack_ip = false
 @onready var attack_noise = $"Attack noise"
 @onready var dash_noise = $"Dash noise"
 @onready var slash_cooldown_timer = $"Slash cooldown timer"
+@onready var currentHealth: int = health
+
 
 
 func _physics_process(delta):
@@ -147,6 +154,7 @@ func enermy_attack():
 		enemy_attack_cooldown = false
 		attack_cooldown.start()
 		print(health)
+		healthChanged.emit()
 
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
