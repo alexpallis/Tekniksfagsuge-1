@@ -7,7 +7,7 @@ enum State {
 	Flee,
 }
 
-const SPEED = 0.3
+const SPEED = 0.25
 var state = State.None
 var player = null
 
@@ -23,7 +23,7 @@ var health = 50
 var player_inattack_zone = false
 var can_take_damage = true
 var papirsfly_shoot = true
-var knockback_SPEED = 2.5
+var knockback_SPEED = 2
 var is_inknockback = false
 
 @onready var papirer = $Papirer

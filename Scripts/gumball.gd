@@ -8,7 +8,7 @@ var health = 30
 var player_inattack_zone = false
 var can_take_damage = true
 var attack_zone = false
-var knockback_SPEED = 2.5
+var knockback_SPEED = 2
 var is_inknockback = false
 
 @onready var animated_sprite = $AnimatedSprite2D

@@ -413,9 +413,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
 radius = 373.484
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60gcc"]
-radius = 48.0
-height = 224.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sq65"]
+radius = 99.4082
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8r6s"]
 radius = 104.173
@@ -447,7 +446,7 @@ shape = SubResource("CircleShape2D_13p4w")
 [node name="bjørn hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bjørn hitbox"]
-shape = SubResource("CapsuleShape2D_60gcc")
+shape = SubResource("CircleShape2D_2sq65")
 
 [node name="invin timer" type="Timer" parent="."]
 
@@ -473,7 +472,7 @@ shape = SubResource("CircleShape2D_nlp04")
 wait_time = 4.0
 
 [node name="knockback timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

@@ -172,7 +172,7 @@ shape = SubResource("CircleShape2D_x8tum")
 shape = SubResource("CircleShape2D_rslur")
 
 [node name="knockback timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
