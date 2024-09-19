@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8d02x4cfqqdv"]
+[gd_scene load_steps=11 format=3 uid="uid://c8d02x4cfqqdv"]
 
 [ext_resource type="Texture2D" uid="uid://c1cb3ki2vecla" path="res://Assets/Floortilev2.png" id="1_12i56"]
 [ext_resource type="Script" path="res://Scripts/dungeon_generator.gd" id="1_jxwbd"]
 [ext_resource type="Texture2D" uid="uid://c1ek1jbn81yqs" path="res://Assets/spacefloorv2dot2.png" id="2_2v3jd"]
+[ext_resource type="Texture2D" uid="uid://dgirupua6h7tw" path="res://Assets/floortile2l.png" id="3_priws"]
+[ext_resource type="Texture2D" uid="uid://jxbo2uq4ctjo" path="res://Assets/walltile2l.png" id="4_582co"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0vaf"]
 texture = ExtResource("1_12i56")
@@ -88,11 +90,24 @@ texture_region_size = Vector2i(96, 96)
 10:5/0 = 0
 11:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnjjs"]
+texture = ExtResource("3_priws")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jak8"]
+texture = ExtResource("4_582co")
+texture_region_size = Vector2i(96, 96)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+
 [sub_resource type="TileSet" id="TileSet_lauot"]
 tile_size = Vector2i(96, 96)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_jq3ma")
 sources/0 = SubResource("TileSetAtlasSource_v0vaf")
+sources/1 = SubResource("TileSetAtlasSource_jq3ma")
+sources/5 = SubResource("TileSetAtlasSource_dnjjs")
+sources/6 = SubResource("TileSetAtlasSource_0jak8")
 
 [node name="RandomDungeon" type="TileMap"]
 tile_set = SubResource("TileSet_lauot")

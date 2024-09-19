@@ -12,19 +12,20 @@ var kills = 0
 @onready var spawned_coins = $SpawnedCoins
 @onready var game_manager = $"../GameManager"
 @onready var random_dungeon = $"../RandomDungeon"
+@onready var level_2 = $Level2
 
 
 
 
-var max_benemies = 5 * Generator.level
+var max_benemies = 5 + Generator.level
 var benemy_count = 0 
-var max_genemies = 7 * Generator.level
+var max_genemies = 7 + Generator.level
 var genemy_count = 0
 var ghost_count = 0
-var max_ghost = 3 * Generator.level
+var max_ghost = 3 + Generator.level
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
-var max_coins = 20
+var max_coins = 25
 var player_count = 0
 var only_one_please = 1
 
@@ -91,15 +92,13 @@ func _ready():
 
 func _on_spawned_coins_child_exiting_tree(node):
 	coins += 1
-	print(coins)
 	
 
 func _process(delta):
-	if coins == 20 and Generator.level == 1:
-		print("next level")
-		Generator.level = 2
-		get_tree().change_scene_to_file("res://level_2.tscn")
-		
+	if coins == 20 and Generator.level == 0:
+		Generator.level = 5
+		level_2.start()
+
 #pause menu
 
 signal toggel_game_paused(is_paused : bool)
@@ -124,3 +123,7 @@ func add_dream_point():
 	score += 1
 	print(score)
 	
+
+
+func _on_level_2_timeout():
+	get_tree().change_scene_to_file("res://level_2.tscn")

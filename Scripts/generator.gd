@@ -7,10 +7,12 @@ class Room:
 	var dimensions:Vector2
 	var centerpoint:Vector2
 
-var level = 1
+var level = 0
 var dugRooms = []
 var rng = RandomNumberGenerator.new()
 
+var walls = level + 2
+var floors = level + 1
 var mapWidth
 var mapHeight
 
@@ -39,7 +41,7 @@ func generate(map:TileMap, w:int, h:int, minRoomSize, maxRoomSize):
 	# out of bounds.
 	for r in range(-1, h + 1):
 		for c in range (-1, w + 1):
-			map.set_cell(0, Vector2i(c, r), 1 * level, Vector2i(Tiles.SOLID, 0))
+			map.set_cell(0, Vector2i(c, r), 1, Vector2i(Tiles.SOLID, 0))
 	
 	# Generate potential rooms.
 	for r in potentialRooms:
@@ -88,4 +90,4 @@ func digRoom(map, room):
 
 func digCell(map, pos):
 	if ((pos.x < mapWidth) && (pos.y < mapHeight)):
-		map.set_cell(0, Vector2i(pos.x, pos.y), 0 * level, Vector2i(Tiles.EMPTY, 0))
+		map.set_cell(0, Vector2i(pos.x, pos.y), 0, Vector2i(Tiles.EMPTY, 0))

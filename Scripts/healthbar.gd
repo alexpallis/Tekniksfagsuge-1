@@ -13,14 +13,14 @@
 	
 
 #func set_health_bar() -> void:
-	$Healthbar.value = health
+	#$Healthbar.value = health
 
 #func set_health_label() -> void:
 	#$HealthLabel.text = "Health: %s" % health
 
 #func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		damage()
+	#if event.is_action_pressed("ui_accept"):
+		#damage()
 
 #func damage() ->void:
 	#health -=1
