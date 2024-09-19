@@ -11,7 +11,6 @@ var health = 100
 var player_alive = true
 var dash_cooldown = true
 var slash_cooldown = true
-
 var attack_ip = false
 
 #healthbar related
@@ -28,8 +27,7 @@ var attack_ip = false
 @onready var currentHealth: int = health
 
 
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	dash()
 	enermy_attack()
 	update_health()
@@ -48,19 +46,19 @@ func _physics_process(delta):
 			velocity.x = direction.x * DASH_SPEED
 			velocity.y = direction.y * DASH_SPEED
 			
-			if direction.x < 0:
+			if direction.x < 0 and direction.y == 0:
 				animated_sprite.flip_h = true
 				animated_sprite.play("dash left right")
 	
-			if direction.x > 0:
+			if direction.x > 0 and direction.y == 0:
 				animated_sprite.flip_h = false
 				animated_sprite.play("dash left right")
 	
-			if direction.y < 0 and direction.x == 0:
-				animated_sprite.play("dash left right")
+			if direction.y < 0:
+				animated_sprite.play("dash up")
 	
-			if direction.y > 0 and direction.x == 0:
-				animated_sprite.play("dash left right")
+			if direction.y > 0:
+				animated_sprite.play("dash down")
 		else:
 			velocity.x = direction.x * SPEED
 			velocity.y = direction.y * SPEED
@@ -116,11 +114,6 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("move down") and Input.is_action_pressed("move up") or Input.is_action_pressed("move left") and Input.is_action_pressed("move right"):
 			animated_sprite.play("dance")
-
-	if (sqrt(velocity.x*velocity.x)) > SPEED:
-		animated_sprite.play("dash left right")
-	elif (sqrt(velocity.y*velocity.y)) > SPEED:
-		animated_sprite.play("dash left right")
 	
 	move_and_slide()
 
@@ -134,8 +127,6 @@ func dash():
 
 func _on_dash_timer_timeout():
 	dashing = false
-
-
 
 func _on_dash_cooldown_timeout():
 	dash_cooldown = true

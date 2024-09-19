@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://kxkk7rk15rhp"]
+[gd_scene load_steps=5 format=3 uid="uid://kxkk7rk15rhp"]
 
 [ext_resource type="PackedScene" uid="uid://c8d02x4cfqqdv" path="res://Scens/DungeonMaker.tscn" id="2_j03to"]
-[ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="9_4mp1y"]
 [ext_resource type="PackedScene" uid="uid://b2htcgmpe4a5h" path="res://Scens/Enemy spawner.tscn" id="9_bi6br"]
 [ext_resource type="PackedScene" uid="uid://brvt1dl8orpk3" path="res://Scens/music.tscn" id="10_n7osx"]
@@ -10,9 +9,6 @@
 process_mode = 3
 
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
-
-[node name="ghost" parent="." instance=ExtResource("6_ym1qm")]
-position = Vector2(480, 187)
 
 [node name="Music" parent="." instance=ExtResource("10_n7osx")]
 volume_db = 5.638
