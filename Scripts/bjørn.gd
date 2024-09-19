@@ -19,7 +19,7 @@ enum AttackState {
 
 var attack_state = AttackState.CanShoot
 
-var health = 100
+var health = 50
 var player_inattack_zone = false
 var can_take_damage = true
 var papirsfly_shoot = true
