@@ -7,7 +7,7 @@ enum State {
 	Flee,
 }
 
-const SPEED = 0.25
+const SPEED = 0.4
 var state = State.None
 var player = null
 
