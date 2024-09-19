@@ -15,7 +15,7 @@ var slash_cooldown = true
 var attack_ip = false
 
 #healthbar related
-signal healthChanged
+#signal healthChanged
 
 @onready var dash_cooldown_timer = $"dash cooldown timer"
 @onready var dash_timer = $"dash timer"
@@ -159,7 +159,7 @@ func enermy_attack():
 		enemy_attack_cooldown = false
 		attack_cooldown.start()
 		print(health)
-		healthChanged.emit()
+		#healthChanged.emit()
 
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
@@ -171,3 +171,11 @@ func _on_dael_attack_timer_timeout():
 
 func _on_slash_cooldown_timer_timeout():
 	slash_cooldown = true
+
+
+#healthbar related
+func update_health():
+	var healthbar = $Camera2D/healthBar_canvas/Health_BAr
+	healthbar.value = health
+	
+	
