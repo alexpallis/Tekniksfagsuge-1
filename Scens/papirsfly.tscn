@@ -45,7 +45,7 @@ radius = 10.6667
 
 [node name="papirsfly" type="CharacterBody2D"]
 light_mask = 3
-z_index = 2
+z_index = 3
 script = ExtResource("1_2m0sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -78,10 +78,10 @@ wait_time = 10.0
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
-[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
 [connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]
 [connection signal="timeout" from="Life Timer Timer" to="." method="_on_life_timer_timer_timeout"]
