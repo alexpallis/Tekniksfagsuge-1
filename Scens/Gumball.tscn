@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbu3stwhgyade"]
+[gd_scene load_steps=21 format=3 uid="uid://bbu3stwhgyade"]
 
 [ext_resource type="Script" path="res://Scripts/gumball.gd" id="1_mjfny"]
 [ext_resource type="Texture2D" uid="uid://dscb2c3ac6rf" path="res://Sprites/Gumball/Gumhit1.png" id="2_cuxi8"]
@@ -101,20 +101,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5c3ox"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb805"]
 radius = 24.0
-height = 96.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g3hjy"]
 radius = 785.02
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksvs5"]
-radius = 96.0
-height = 208.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8tum"]
+radius = 80.399
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rslur"]
+radius = 118.119
 
 [node name="Gumball" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_mjfny")
+
+[node name="invin timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -122,7 +125,7 @@ sprite_frames = SubResource("SpriteFrames_18hqo")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_5c3ox")
+shape = SubResource("CircleShape2D_vb805")
 
 [node name="detection" type="Area2D" parent="."]
 collision_layer = 2
@@ -134,7 +137,7 @@ shape = SubResource("CircleShape2D_g3hjy")
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-shape = SubResource("CapsuleShape2D_ksvs5")
+shape = SubResource("CircleShape2D_x8tum")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -142,8 +145,16 @@ wait_time = 0.5
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Attack Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
+shape = SubResource("CircleShape2D_rslur")
+
+[connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Attack Area" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="Attack Area" to="." method="_on_attack_area_body_exited"]

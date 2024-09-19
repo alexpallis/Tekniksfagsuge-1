@@ -66,7 +66,7 @@ func _physics_process(delta):
 				animated_sprite.play("walk down")
 		
 		State.Flee:
-			position += (position - player.position) * (SPEED / 3) * delta
+			position += (position - player.position) * SPEED*2 * delta
 
 			if d.x < 0 and d.y == 0:
 				animated_sprite.flip_h = true
@@ -77,10 +77,10 @@ func _physics_process(delta):
 				animated_sprite.play("walk left right")
 
 			if d.y < 0:
-				animated_sprite.play("walk up")
+				animated_sprite.play("walk down")
 
 			if d.y > 0:
-				animated_sprite.play("walk down")
+				animated_sprite.play("walk up")
 
 		State.Shoot:
 			match attack_state:
