@@ -1,11 +1,17 @@
 extends Node2D
 
 
+var coins = 0
+var kills = 0
 
+@onready var coin_label = $CoinLabel
 
 @onready var spawned_enemies = $SpawnedEnemies
 @onready var tilemap = $"../RandomDungeon"
 @onready var spawned_coins = $SpawnedCoins
+@onready var game_manager = $"../GameManager"
+@onready var random_dungeon = $"../RandomDungeon"
+
 
 
 
@@ -14,6 +20,8 @@ var enemy_count = 0
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
 var max_coins = 20
+var player_count = 0
+var only_one_please = 1
 
 
 func _ready():
@@ -44,4 +52,21 @@ func _ready():
 			
 		else:
 			attempts += 1
+	while player_count < only_one_please:
+		var random_position = Vector2(rng.randi() % tilemap.get_used_rect().size.x,rng.randi() % tilemap.get_used_rect().size.y)
+		var spawnable = tilemap.get_cell_source_id(0,random_position)
+		if spawnable == 0:
+			var player = global.player_scene.instantiate()
+			player.position = tilemap.map_to_local(random_position) + Vector2(16, 16) / 2
+			random_dungeon.add_child(player)
+			player_count += 1
 	
+
+
+
+	
+
+
+func _on_spawned_coins_child_exiting_tree(node):
+	coins += 1
+	print(coins)

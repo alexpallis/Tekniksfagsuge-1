@@ -42,8 +42,8 @@ func _physics_process(delta):
 		
 	deal_with_damage()
 	
-	print("hello %d" % [Time.get_time_dict_from_system().second])
-	print(AttackState.find_key(attack_state))
+	#print("hello %d" % [Time.get_time_dict_from_system().second])
+	#print(AttackState.find_key(attack_state))
 
 	var d = player.position - position
 	
@@ -174,7 +174,7 @@ func _on_attack_timer_timeout():
 		var papir = global.papir_scene.instantiate()
 		papir.position = self.position
 		papirer.add_sibling(papir)
-		print("hi %d" % [Time.get_time_dict_from_system().second])
+		#print("hi %d" % [Time.get_time_dict_from_system().second])
 		papirsfly_timer.start()
 		papirsfly_shoot = false
 

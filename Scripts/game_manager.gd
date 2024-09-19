@@ -8,5 +8,4 @@ var kills = 0
 
 func add_coin():
 	coins += 1
-	coin_label.text = str(coins) + "Coins"
-	
+	print(coins)
