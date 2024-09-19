@@ -1,21 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8d02x4cfqqdv"]
+[gd_scene load_steps=7 format=3 uid="uid://c8d02x4cfqqdv"]
 
 [ext_resource type="Script" path="res://Scripts/dungeon_generator.gd" id="1_jxwbd"]
-[ext_resource type="Texture2D" uid="uid://bdbl74rcwuytv" path="res://Assets/totiles.png" id="1_yd7gc"]
+[ext_resource type="Texture2D" uid="uid://c6v24hibpfja1" path="res://Assets/purplefloor1.png" id="1_rixex"]
+[ext_resource type="Texture2D" uid="uid://bmdhk0ogbppm5" path="res://Assets/starwallpoint2.png" id="2_oarjw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4vyf"]
-texture = ExtResource("1_yd7gc")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0vaf"]
+texture = ExtResource("1_rixex")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53a5v"]
-texture = ExtResource("1_yd7gc")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jq3ma"]
+texture = ExtResource("2_oarjw")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_lauot"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_e4vyf")
-sources/1 = SubResource("TileSetAtlasSource_53a5v")
+sources/1 = SubResource("TileSetAtlasSource_jq3ma")
+sources/0 = SubResource("TileSetAtlasSource_v0vaf")
 
 [node name="RandomDungeon" type="TileMap"]
 tile_set = SubResource("TileSet_lauot")

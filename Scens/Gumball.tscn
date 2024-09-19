@@ -140,6 +140,9 @@ shape = SubResource("CapsuleShape2D_ksvs5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

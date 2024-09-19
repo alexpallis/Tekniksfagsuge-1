@@ -10,6 +10,7 @@ var enemy_attack_cooldown =true
 var health = 100
 var player_alive = true
 var dash_cooldown = true
+var slash_cooldown = true
 
 var attack_ip = false
 
@@ -80,8 +81,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack") and slash_cooldown == true:
 		attack_noise.play()
+		slash_cooldown = false
+		slash_cooldown_timer.start()
 		if direction.y < 0:
 			animated_sprite.play("attack up")
 		if direction.y > 0:
@@ -167,4 +170,4 @@ func _on_dael_attack_timer_timeout():
 
 
 func _on_slash_cooldown_timer_timeout():
-	pass # Replace with function body.
+	slash_cooldown = true

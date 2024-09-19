@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 10
+var speed = 1
 var player_chase = false
 var player = null
 var player_hittable = false
@@ -10,6 +10,24 @@ var can_take_damage = true
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var timer = $Timer
 @onready var Player = $Player
+@onready var cooldown = $Cooldown
+
+
+func _physics_process(delta):
+	deal_with_damage()
+	
+	if player_chase:
+		position += (player.position - position) * speed * delta
+	
+	if player_hittable:
+		cooldown.start()
+		timer.start()
+		player_hittable = false
+	
+	animated_sprite_2d.play("run")
+	
+	move_and_slide()
+
 
 func _on_detection_body_entered(body):
 	player = body
@@ -27,18 +45,6 @@ func _on_hitbox_body_entered(body):
 
 func _on_hitbox_body_exited(body):
 	player_hittable = false
-
-func _physics_process(delta):
-	deal_with_damage()
-	
-	if player_chase:
-		position += (player.position - position) * speed * delta
-	
-	if player_hittable:
-		timer.start()
-	animated_sprite_2d.play("run")
-	
-	move_and_slide()
 
 
 func _on_timer_timeout():
