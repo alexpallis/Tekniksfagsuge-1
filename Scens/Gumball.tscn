@@ -129,7 +129,7 @@ script = ExtResource("1_mjfny")
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_18hqo")
 animation = &"run"
-frame_progress = 0.924259
+frame_progress = 0.615531
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vb805")
