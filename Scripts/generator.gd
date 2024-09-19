@@ -7,7 +7,7 @@ class Room:
 	var dimensions:Vector2
 	var centerpoint:Vector2
 
-
+var level = 0
 var dugRooms = []
 var rng = RandomNumberGenerator.new()
 
