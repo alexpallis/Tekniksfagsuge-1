@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2j56x6xi5gfg" path="res://andre ting/dream_shroomie.tscn" id="3_l77ws"]
 [ext_resource type="PackedScene" uid="uid://c7dvp5stlvk2g" path="res://Scens/bjørn.tscn" id="4_3r0b2"]
 [ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="6_ym1qm"]
-[ext_resource type="Script" path="res://Scens/canvas_layer.gd" id="7_w88ed"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="7_w88ed"]
 [ext_resource type="Script" path="res://Scens/healthbar.gd" id="8_a0nlb"]
 [ext_resource type="PackedScene" uid="uid://b2htcgmpe4a5h" path="res://Scens/Enemy spawner.tscn" id="9_bi6br"]
 [ext_resource type="PackedScene" uid="uid://brvt1dl8orpk3" path="res://Scens/music.tscn" id="10_n7osx"]
