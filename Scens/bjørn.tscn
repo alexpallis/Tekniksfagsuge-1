@@ -438,6 +438,7 @@ shape = SubResource("CircleShape2D_13p4w")
 shape = SubResource("CapsuleShape2D_60gcc")
 
 [node name="invin timer" type="Timer" parent="."]
+wait_time = 0.23
 
 [node name="attack timer" type="Timer" parent="."]
 

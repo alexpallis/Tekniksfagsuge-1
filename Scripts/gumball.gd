@@ -19,6 +19,8 @@ func _physics_process(delta):
 	if player_hittable:
 		timer.start()
 	animated_sprite_2d.play("run")
+	
+	move_and_slide()
 
 
 func _on_detection_body_entered(body):

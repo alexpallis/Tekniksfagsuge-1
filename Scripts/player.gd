@@ -92,6 +92,8 @@ func _physics_process(delta):
 		if direction.x > 0 and direction.y == 0:
 			animated_sprite.flip_h = false
 			animated_sprite.play("attack left right")
+		if direction.x == 0 and direction.y == 0:
+			animated_sprite.play("attack down")
 		
 		global.player_current_attack = true
 		attack_ip = true
