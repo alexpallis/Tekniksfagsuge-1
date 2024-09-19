@@ -95,7 +95,7 @@ func _on_spawned_coins_child_exiting_tree(node):
 	
 
 func _process(delta):
-	if coins == 1 and Generator.level == 1:
+	if coins == 20 and Generator.level == 1:
 		print("next level")
 		Generator.level = 2
 		get_tree().change_scene_to_file("res://level_2.tscn")
