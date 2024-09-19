@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brvt1dl8orpk3" path="res://Scens/music.tscn" id="10_n7osx"]
 
 [node name="Game" type="Node2D"]
+process_mode = 3
 
 [node name="RandomDungeon" parent="." instance=ExtResource("2_j03to")]
 
@@ -32,10 +33,10 @@ parameters/looping = true
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="healthbar" type="CanvasLayer" parent="."]
 script = ExtResource("7_w88ed")
 
-[node name="healthbar" type="ProgressBar" parent="CanvasLayer"]
+[node name="healthbar" type="ProgressBar" parent="healthbar"]
 offset_right = 198.0
 offset_bottom = 27.0
 step = 1.0
@@ -43,7 +44,7 @@ value = 100.0
 show_percentage = false
 script = ExtResource("8_a0nlb")
 
-[node name="healthlabel" type="Label" parent="CanvasLayer/healthbar"]
+[node name="healthlabel" type="Label" parent="healthbar/healthbar"]
 layout_mode = 0
 offset_left = 65.0
 offset_top = 4.0

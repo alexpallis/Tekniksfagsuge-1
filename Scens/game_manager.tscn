@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://i8agrsaw5a43"]
-
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_puros"]
-
-[node name="GameManager" type="Node"]
-script = ExtResource("1_puros")
-
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
