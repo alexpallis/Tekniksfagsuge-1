@@ -35,7 +35,7 @@ func generate(map:TileMap, w:int, h:int, minRoomSize, maxRoomSize):
 	mapWidth = w
 	mapHeight = h
 
-	# Fill map with solid tiles, adding a "border" of solid tiles around the map
+	# Fylder mappet med blockke
 	# out of bounds.
 	for r in range(-1, h + 1):
 		for c in range (-1, w + 1):
