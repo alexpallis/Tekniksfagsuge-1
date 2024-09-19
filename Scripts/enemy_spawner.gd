@@ -20,6 +20,8 @@ var max_benemies = 10
 var benemy_count = 0 
 var max_genemies = 10 
 var genemy_count = 0
+var ghost_count = 0
+var max_ghost = 5
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
 var max_coins = 20
@@ -72,7 +74,15 @@ func _ready():
 			enemyg.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
 			spawned_enemies.add_child(enemyg)
 			genemy_count += 1
-		
+			
+	while ghost_count < max_ghost:
+		var random_position = Vector2(rng.randi() % tilemap.get_used_rect().size.x,rng.randi() % tilemap.get_used_rect().size.y)
+		var spawnable = tilemap.get_cell_source_id(0,random_position)
+		if spawnable == 0:
+			var ghost = global.ghost_scene.instantiate()
+			ghost.position = tilemap.map_to_local(random_position) + Vector2(96, 96) / 2
+			spawned_enemies.add_child(ghost)
+			ghost_count += 1
 
 
 
