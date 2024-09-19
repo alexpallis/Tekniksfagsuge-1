@@ -6,3 +6,4 @@ var player_current_attack = false
 @onready var papir_scene = load("res://Scens/papirsfly.tscn")
 @onready var coin_scene = load("res://Scens/coin.tscn")
 @onready var player_scene = load("res://Scens/player.tscn")
+@onready var gumball_scene = load("res://Scens/Gumball.tscn")

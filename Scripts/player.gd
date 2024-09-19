@@ -73,7 +73,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_pressed("attack"):
 		attack_noise.play()
 		if direction.y < 0:
 			animated_sprite.play("attack up")
