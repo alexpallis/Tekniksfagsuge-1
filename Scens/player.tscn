@@ -648,25 +648,25 @@ region = Rect2(880, 0, 220, 120)
 atlas = ExtResource("6_7e5s8")
 region = Rect2(1100, 0, 220, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gehc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ysg5"]
 atlas = ExtResource("7_6ipvm")
-region = Rect2(0, 0, 150, 120)
+region = Rect2(600, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4imaq"]
-atlas = ExtResource("7_6ipvm")
-region = Rect2(150, 0, 150, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80b5c"]
-atlas = ExtResource("7_6ipvm")
-region = Rect2(300, 0, 150, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sclfe"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyib8"]
 atlas = ExtResource("7_6ipvm")
 region = Rect2(450, 0, 150, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdm5c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4tm8"]
 atlas = ExtResource("7_6ipvm")
-region = Rect2(600, 0, 150, 120)
+region = Rect2(300, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woe08"]
+atlas = ExtResource("7_6ipvm")
+region = Rect2(150, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m43wl"]
+atlas = ExtResource("7_6ipvm")
+region = Rect2(0, 0, 150, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8j3y"]
 animations = [{
@@ -1308,19 +1308,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0gehc")
+"texture": SubResource("AtlasTexture_0ysg5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4imaq")
+"texture": SubResource("AtlasTexture_dyib8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_80b5c")
+"texture": SubResource("AtlasTexture_y4tm8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sclfe")
+"texture": SubResource("AtlasTexture_woe08")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fdm5c")
+"texture": SubResource("AtlasTexture_m43wl")
 }],
 "loop": true,
 "name": &"walk up",
@@ -1341,8 +1341,9 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"dance"
+animation = &"walk up"
 autoplay = "idl down"
+frame_progress = 0.152141
 
 [node name="dash timer" type="Timer" parent="."]
 
