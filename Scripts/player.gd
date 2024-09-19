@@ -32,6 +32,7 @@ var attack_ip = false
 func _physics_process(delta):
 	dash()
 	enermy_attack()
+	update_health()
 	
 	if health <= 0:
 		player_alive = false # tlføj game over
@@ -177,5 +178,8 @@ func _on_slash_cooldown_timer_timeout():
 func update_health():
 	var healthbar = $Camera2D/healthBar_canvas/Health_BAr
 	healthbar.value = health
+	set_health_label()
 	
 	
+func set_health_label():
+	$Camera2D/healthBar_canvas/Label.text = "hp: %s" % health

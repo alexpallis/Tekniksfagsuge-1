@@ -1383,6 +1383,7 @@ drag_vertical_enabled = true
 [node name="healthBar_canvas" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Health_BAr" type="ProgressBar" parent="Camera2D/healthBar_canvas"]
+modulate = Color(0.86351, 0, 0.00811484, 1)
 offset_left = 6.0
 offset_top = 1.0
 offset_right = 225.0
@@ -1390,6 +1391,13 @@ offset_bottom = 34.0
 value = 100.0
 show_percentage = false
 script = ExtResource("16_v177q")
+
+[node name="Label" type="Label" parent="Camera2D/healthBar_canvas"]
+offset_left = 151.0
+offset_top = 5.0
+offset_right = 191.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash cooldown timer" to="." method="_on_dash_cooldown_timeout"]
