@@ -16,12 +16,12 @@ var kills = 0
 
 
 
-var max_benemies = 10 
+var max_benemies = 5 * Generator.level
 var benemy_count = 0 
-var max_genemies = 10 
+var max_genemies = 7 * Generator.level
 var genemy_count = 0
 var ghost_count = 0
-var max_ghost = 5
+var max_ghost = 3 * Generator.level
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
 var max_coins = 20
@@ -92,7 +92,14 @@ func _ready():
 func _on_spawned_coins_child_exiting_tree(node):
 	coins += 1
 	print(coins)
+	
 
+func _process(delta):
+	if coins == 1 and Generator.level == 1:
+		print("next level")
+		Generator.level = 2
+		get_tree().change_scene_to_file("res://level_2.tscn")
+		
 #pause menu
 
 signal toggel_game_paused(is_paused : bool)

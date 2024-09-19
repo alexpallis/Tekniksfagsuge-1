@@ -20,10 +20,6 @@ config/icon="res://icon.svg"
 Generator="*res://Scripts/generator.gd"
 global="*res://Scripts/global.gd"
 
-[display]
-
-window/size/mode=3
-
 [input]
 
 "move left"={
