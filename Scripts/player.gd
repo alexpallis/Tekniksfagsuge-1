@@ -38,7 +38,7 @@ func _physics_process(delta):
 		player_alive = false # tlføj game over
 		health = 0
 		print("player has been killed")
-		get_tree().change_scene_to_file("res://game_over.tscn")
+		get_tree().change_scene_to_file("res://game_over.tscn") #dette er game over
 	
 	
 	var direction = Input.get_vector("move left","move right","move up","move down")
