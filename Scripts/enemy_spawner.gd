@@ -161,12 +161,18 @@ func _process(delta):
 
 #score stuff
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of 26ea9b2 (dreams stuff)
 
 var score = 0
 
+=======
+
+var score = 0
+
+>>>>>>> parent of 26ea9b2 (dreams stuff)
 func add_dream_point():
 	score += 1
 	print(score)
