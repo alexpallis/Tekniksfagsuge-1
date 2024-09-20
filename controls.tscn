@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx1rdt11hqqss"]
+
+[ext_resource type="Script" path="res://controls.gd" id="1_drw87"]
+[ext_resource type="Texture2D" uid="uid://3tidkykadjec" path="res://Assets/controls.png" id="1_ib55k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgcye"]
+texture = ExtResource("1_ib55k")
+
+[node name="Controls" type="CanvasLayer"]
+script = ExtResource("1_drw87")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lgcye")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 97.0
+offset_top = 547.0
+offset_right = 179.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
