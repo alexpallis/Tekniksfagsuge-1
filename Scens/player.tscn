@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=3 uid="uid://c5lfgfc63k71o"]
+[gd_scene load_steps=186 format=3 uid="uid://c5lfgfc63k71o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xhu21"]
 [ext_resource type="Texture2D" uid="uid://b8ywdqrl6jxad" path="res://Sprites/Player/Bogiedashv2.png" id="2_1h2wp"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://qn6oru0gl88r" path="res://Assets/slashsound1.mp3" id="11_jerwk"]
 [ext_resource type="AudioStream" uid="uid://cw6mf82ieocaf" path="res://Assets/dashsound1.mp3" id="12_76ki8"]
 [ext_resource type="Script" path="res://Scripts/Health_Bar.gd" id="16_v177q"]
+[ext_resource type="FontFile" uid="uid://e6big3duvceg" path="res://Assets/PixelOperator8-Bold.ttf" id="17_ixpvu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ne76e"]
 atlas = ExtResource("2_uc5ov")
@@ -1400,30 +1401,38 @@ drag_vertical_enabled = true
 
 [node name="Health_BAr" type="ProgressBar" parent="Camera2D/healthBar_canvas"]
 modulate = Color(0.86351, 0, 0.00811484, 1)
-offset_left = 6.0
-offset_top = 1.0
-offset_right = 225.0
-offset_bottom = 34.0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 223.0
+offset_bottom = 54.0
 value = 100.0
 show_percentage = false
 script = ExtResource("16_v177q")
 
 [node name="Label" type="Label" parent="Camera2D/healthBar_canvas"]
-offset_left = 151.0
-offset_top = 5.0
-offset_right = 191.0
-offset_bottom = 28.0
+offset_left = 46.0
+offset_top = 26.0
+offset_right = 189.0
+offset_bottom = 48.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("17_ixpvu")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Dreams" type="Label" parent="Camera2D/healthBar_canvas"]
-offset_left = 513.0
-offset_top = -1.0
-offset_right = 1095.0
-offset_bottom = 61.0
+offset_left = 511.0
+offset_top = 19.0
+offset_right = 1093.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("17_ixpvu")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/healthBar_canvas"]
-offset_right = 1143.0
-offset_bottom = 72.0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 1141.0
+offset_bottom = 92.0
 
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash cooldown timer" to="." method="_on_dash_cooldown_timeout"]

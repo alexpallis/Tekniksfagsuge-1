@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bloi2axwjnn7f"]
+[gd_scene load_steps=3 format=3 uid="uid://bloi2axwjnn7f"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_yyyjt"]
+[ext_resource type="FontFile" uid="uid://dm6xtg08l1ryq" path="res://Assets/PixelOperator8.ttf" id="2_lb4ba"]
 
 [node name="Optionsmenu" type="Node2D"]
 position = Vector2(448, 80)
@@ -21,18 +22,22 @@ layout_mode = 2
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_lb4ba")
 text = "Volumen"
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lb4ba")
 text = "Controls"
 
 [node name="Screen" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lb4ba")
 text = "Screen"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lb4ba")
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
