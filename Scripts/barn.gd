@@ -22,6 +22,7 @@ var randmove = true
 func _physics_process(delta):
 	deal_with_damage()
 	move_and_slide()
+	update_health_barn()
 
 	if randmove == true:
 		movebarn = Vector2(rng.randi_range(-9,9), rng.randi_range(-9, 9)).normalized()
@@ -93,3 +94,9 @@ func _on_knockback_timer_timeout():
 
 func _on_random_timer_timeout():
 	randmove = true
+
+func update_health_barn():
+	var healthbar = $HealthbarBarn
+	healthbar.value = health
+	
+	
