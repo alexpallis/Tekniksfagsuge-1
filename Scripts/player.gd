@@ -181,4 +181,4 @@ func set_health_label():
 	$Camera2D/healthBar_canvas/Label.text = "hp: %s" % health
 
 func set_dream_label():
-	dreams.text = "You have collected " + str(global.dreams_collected) + " dream(s), out of 20"
+	dreams.text = "You have caught " + str(global.dreams_collected) + " dream(s), out of 20"

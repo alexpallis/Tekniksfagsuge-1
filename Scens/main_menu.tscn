@@ -36,6 +36,7 @@ max_distance = 200000.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(130.81, 34.5)
+zoom = Vector2(0.8, 0.8)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

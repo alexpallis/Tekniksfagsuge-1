@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6ybb57ptnmvp"]
+[gd_scene load_steps=13 format=3 uid="uid://c6ybb57ptnmvp"]
 
 [ext_resource type="AudioStream" uid="uid://b0c2nwhoavdbf" path="res://Assets/boogiemanremix.mp3" id="1_uqvdm"]
 [ext_resource type="Texture2D" uid="uid://cdswh6adt1lac" path="res://Assets/newbedroomtilesetv5.png" id="2_7y3l0"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dfdwfbira5y2c" path="res://Scens/dog.tscn" id="5_vho56"]
 [ext_resource type="Texture2D" uid="uid://s07dhm1is02g" path="res://Assets/window1.png" id="7_td8i6"]
 [ext_resource type="AudioStream" uid="uid://bwxfqphp6vhf3" path="res://Assets/stompwav-14753.mp3" id="8_ex3g2"]
+[ext_resource type="Texture2D" uid="uid://dww2wax63mkaj" path="res://Assets/cabinet.png" id="9_wa1ke"]
+[ext_resource type="Texture2D" uid="uid://drhda1s00ucmo" path="res://Assets/wallposter.png" id="10_bhopg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqb01"]
 texture = ExtResource("2_7y3l0")
@@ -90,7 +92,6 @@ max_distance = 20000.0
 parameters/looping = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
 zoom = Vector2(2.25, 2.25)
 limit_left = 0
 limit_top = 0
@@ -121,4 +122,12 @@ texture = ExtResource("7_td8i6")
 position = Vector2(1175, 390)
 
 [node name="DOG" parent="." instance=ExtResource("5_vho56")]
-position = Vector2(641, 411)
+position = Vector2(642, 454)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1330, 204)
+texture = ExtResource("9_wa1ke")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(519, 158)
+texture = ExtResource("10_bhopg")
