@@ -1356,8 +1356,9 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"dash down"
+animation = &"dance"
 autoplay = "idl down"
+frame_progress = 0.489118
 
 [node name="dash timer" type="Timer" parent="."]
 
