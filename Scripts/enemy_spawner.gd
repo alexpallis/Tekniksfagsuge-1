@@ -150,7 +150,7 @@ func _on_spawned_coins_child_exiting_tree(node):
 
 func _process(delta):
 	if coins == 20 and Generator.level == 0:
-		Generator.level = 5
+		Generator.level = 1
 		level_2.start()
 
 #pause menu
