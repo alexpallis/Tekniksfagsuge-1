@@ -5,7 +5,7 @@ var player_chase = false
 var player = null
 var knockback_SPEED = 400
 
-var health = 200
+var health = 160
 var player_inattack_zone = false
 var can_take_damage = true
 var is_inknockback = false
