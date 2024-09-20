@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://b0c2nwhoavdbf" path="res://Assets/boogiemanremix.mp3" id="1_uqvdm"]
 [ext_resource type="Texture2D" uid="uid://cdswh6adt1lac" path="res://Assets/newbedroomtilesetv5.png" id="2_7y3l0"]
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="3_fvbli"]
-[ext_resource type="PackedScene" path="res://Scens/barn.tscn" id="4_fsd1t"]
+[ext_resource type="PackedScene" uid="uid://cdrrcj3oqgcpi" path="res://Scens/barn.tscn" id="4_fsd1t"]
 [ext_resource type="Texture2D" uid="uid://dlfqd8c6vgitg" path="res://Assets/bed1.png" id="4_kncib"]
 [ext_resource type="PackedScene" uid="uid://dfdwfbira5y2c" path="res://Scens/dog.tscn" id="5_vho56"]
 [ext_resource type="Texture2D" uid="uid://s07dhm1is02g" path="res://Assets/window1.png" id="7_td8i6"]
@@ -83,6 +83,15 @@ size = Vector2(192.5, 279.5)
 
 [node name="BossFight" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.125, 1.125)
+limit_left = 0
+limit_top = 0
+limit_right = 1728
+limit_bottom = 960
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_uqvdm")
 volume_db = -1.88
@@ -96,15 +105,6 @@ volume_db = 4.567
 autoplay = true
 max_distance = 20000.0
 parameters/looping = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.25, 2.25)
-limit_left = 0
-limit_top = 0
-limit_right = 1728
-limit_bottom = 960
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_30yjv")
