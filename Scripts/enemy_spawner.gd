@@ -151,7 +151,7 @@ func _on_spawned_coins_child_exiting_tree(node):
 	global.dreams_collected +=1
 
 func _process(delta):
-	if coins == 2 and Generator.level == 0:
+	if coins == 20 and Generator.level == 0:
 		Generator.level = 1
 		get_tree().change_scene_to_file("res://Scens/level_2.tscn")
 	if coins == 20 and Generator.level == 1:
