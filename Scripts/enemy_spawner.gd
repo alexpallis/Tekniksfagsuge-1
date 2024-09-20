@@ -16,12 +16,12 @@ var kills = 0
 @onready var boss_fight = $BossFight
 
 
-var max_benemies = 5 + Generator.level * 5
+var max_benemies = 8 + Generator.level * 5
 var benemy_count = 0 
-var max_genemies = 7 + Generator.level * 4
+var max_genemies = 8 + Generator.level * 4
 var genemy_count = 0
 var ghost_count = 0
-var max_ghost = 3 + Generator.level * 3
+var max_ghost = 5 + Generator.level * 3
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
 var max_coins = 25
@@ -157,30 +157,10 @@ func _process(delta):
 		Generator.level = 2
 		boss_fight.start()
 
-#pause menu
 
-signal toggel_game_paused(is_paused : bool)
-
-var game_paused : bool = false:
-	get:
-		return game_paused
-	set(value):
-		game_paused = value
-		get_tree().paused = game_paused
-		emit_signal("toggel_game_paused", game_paused)
-
-func _input(event: InputEvent) -> void:
-	if(event.is_action_pressed("ui_cancel")):
-		game_paused = !game_paused
 
 #score stuff
 
-var score = 0
-
-func add_dream_point():
-	score += 1
-	print(score)
-	
 
 
 func _on_level_2_timeout():
