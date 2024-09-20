@@ -147,7 +147,6 @@ func _ready():
 
 func _on_spawned_coins_child_exiting_tree(node):
 	coins += 1
-	dreams.text = "Dreams collected" + coins
 	
 
 func _process(delta):
@@ -161,10 +160,16 @@ func _process(delta):
 
 
 #score stuff
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 26ea9b2 (dreams stuff)
 
-@onready var dreams: Label = $Camera2D/healthBar_canvas/Dreams
+var score = 0
 
+func add_dream_point():
+	score += 1
+	print(score)
 	
 
 
