@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d121456sbwaax"]
+[gd_scene load_steps=30 format=3 uid="uid://dfdwfbira5y2c"]
 
 [ext_resource type="Script" path="res://Scripts/dog.gd" id="1_56xst"]
 [ext_resource type="Texture2D" uid="uid://cul1t2pknr7ty" path="res://Sprites/Boss/Dogbossidlev1.png" id="2_swyc6"]
@@ -204,13 +204,15 @@ shape = SubResource("CircleShape2D_og4v4")
 shape = SubResource("CircleShape2D_48ytt")
 
 [node name="Attack animation" type="Timer" parent="."]
-wait_time = 0.25
+one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(47, -8)
 sprite_frames = SubResource("SpriteFrames_m4ffn")
 animation = &"attack"
 autoplay = "run"
+frame = 6
+frame_progress = 1.0
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
