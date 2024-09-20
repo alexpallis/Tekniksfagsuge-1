@@ -137,7 +137,6 @@ shape = SubResource("CircleShape2D_nh862")
 shape = SubResource("CircleShape2D_403vn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.389026, 0.921421, 0.92031, 0.384314)
 position = Vector2(8, -19)
 sprite_frames = SubResource("SpriteFrames_h3da1")
 animation = &"Knock"
