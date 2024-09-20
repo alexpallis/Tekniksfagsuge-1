@@ -49,7 +49,7 @@ func _physics_process(delta):
 	#print(AttackState.find_key(attack_state))
 
 	if is_inknockback == true:
-		position += (position - player.position).normalized() * knockback_SPEED * delta
+		position += (position - player.position) * knockback_SPEED * delta
 		animated_sprite.play("Knock")
 
 	var d = player.position - position

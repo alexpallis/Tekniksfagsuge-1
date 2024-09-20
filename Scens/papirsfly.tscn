@@ -53,7 +53,8 @@ script = ExtResource("1_2m0sv")
 z_index = 2
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_0bt5y")
-animation = &"fly up down"
+animation = &"fly left right"
+autoplay = "fly left right"
 
 [node name="detection" type="Area2D" parent="."]
 
@@ -79,8 +80,8 @@ wait_time = 7.5
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
 [connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
