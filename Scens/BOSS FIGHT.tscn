@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6ybb57ptnmvp"]
+[gd_scene load_steps=10 format=3 uid="uid://c6ybb57ptnmvp"]
 
 [ext_resource type="AudioStream" uid="uid://b0c2nwhoavdbf" path="res://Assets/boogiemanremix.mp3" id="1_uqvdm"]
 [ext_resource type="Texture2D" uid="uid://cdswh6adt1lac" path="res://Assets/newbedroomtilesetv5.png" id="2_7y3l0"]
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="3_fvbli"]
+[ext_resource type="PackedScene" path="res://Scens/barn.tscn" id="4_fsd1t"]
 [ext_resource type="Texture2D" uid="uid://dlfqd8c6vgitg" path="res://Assets/bed1.png" id="4_kncib"]
+[ext_resource type="PackedScene" path="res://Scens/dog.tscn" id="5_vho56"]
+[ext_resource type="Texture2D" uid="uid://s07dhm1is02g" path="res://Assets/window1.png" id="7_td8i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqb01"]
 texture = ExtResource("2_7y3l0")
@@ -97,5 +100,17 @@ layer_0/tile_data = PackedInt32Array(589841, 2, 3, 589824, 2, 3, 327680, 131074,
 position = Vector2(956, 645)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(339, 308)
 texture = ExtResource("4_kncib")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(892, 139)
+scale = Vector2(0.756944, 0.795139)
+texture = ExtResource("7_td8i6")
+
+[node name="Barn" parent="." instance=ExtResource("4_fsd1t")]
+position = Vector2(1175, 390)
+
+[node name="DOG" parent="." instance=ExtResource("5_vho56")]
+position = Vector2(641, 411)
