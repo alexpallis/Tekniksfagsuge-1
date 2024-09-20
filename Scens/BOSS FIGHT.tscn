@@ -131,6 +131,17 @@ texture = ExtResource("7_td8i6")
 [node name="Barn" parent="." instance=ExtResource("4_fsd1t")]
 position = Vector2(1175, 390)
 
+[node name="HealthbarBarn" type="ProgressBar" parent="Barn"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -14.0
+offset_top = 22.0
+offset_right = 99.0
+offset_bottom = 49.0
+scale = Vector2(0.3, 0.3)
+max_value = 150.0
+value = 150.0
+show_percentage = false
+
 [node name="DOG" parent="." instance=ExtResource("5_vho56")]
 position = Vector2(642, 454)
 
