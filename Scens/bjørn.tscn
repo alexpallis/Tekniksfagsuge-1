@@ -1,8 +1,9 @@
-[gd_scene load_steps=64 format=3 uid="uid://c7dvp5stlvk2g"]
+[gd_scene load_steps=66 format=3 uid="uid://c7dvp5stlvk2g"]
 
 [ext_resource type="Script" path="res://Scripts/bjørn.gd" id="1_csrmv"]
 [ext_resource type="Texture2D" uid="uid://dovqut03sajmu" path="res://Sprites/Bjørn/teddyfront.png" id="1_k2pfm"]
 [ext_resource type="Texture2D" uid="uid://cbupscqedy8ma" path="res://Sprites/Bjørn/teddysideIdel1.png" id="2_jupa5"]
+[ext_resource type="Texture2D" uid="uid://dlpfvjltf0oh8" path="res://Sprites/Bjørn/tedhurtv1.png" id="2_kgvn6"]
 [ext_resource type="Texture2D" uid="uid://b0et253olydj7" path="res://Sprites/Bjørn/Teddybackidle.png" id="3_40vft"]
 [ext_resource type="Texture2D" uid="uid://nr3swj2asqvf" path="res://Sprites/Bjørn/teddyfrontshoot.png" id="4_nxgpo"]
 [ext_resource type="Texture2D" uid="uid://dhqwnbi58st2j" path="res://Sprites/Bjørn/teddyshootside.png" id="5_gqx4j"]
@@ -14,6 +15,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
 radius = 20.0
 height = 104.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgydt"]
+atlas = ExtResource("2_kgvn6")
+region = Rect2(150, 0, 150, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wj5s"]
 atlas = ExtResource("1_k2pfm")
@@ -205,6 +210,14 @@ region = Rect2(600, 0, 150, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs2ub"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgydt")
+}],
+"loop": true,
+"name": &"Knock",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"dance",
@@ -400,9 +413,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
 radius = 373.484
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60gcc"]
-radius = 48.0
-height = 224.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sq65"]
+radius = 99.4082
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8r6s"]
 radius = 104.173
@@ -418,7 +430,7 @@ shape = SubResource("CapsuleShape2D_1wght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"walk up"
+animation = &"Knock"
 autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
@@ -434,7 +446,7 @@ shape = SubResource("CircleShape2D_13p4w")
 [node name="bjørn hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bjørn hitbox"]
-shape = SubResource("CapsuleShape2D_60gcc")
+shape = SubResource("CircleShape2D_2sq65")
 
 [node name="invin timer" type="Timer" parent="."]
 
@@ -459,6 +471,9 @@ shape = SubResource("CircleShape2D_nlp04")
 [node name="papirsfly timer" type="Timer" parent="."]
 wait_time = 4.0
 
+[node name="knockback timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="bjørn hitbox" to="." method="_on_bjørn_hitbox_body_entered"]
@@ -471,3 +486,4 @@ wait_time = 4.0
 [connection signal="body_entered" from="flee area" to="." method="_on_flee_area_body_entered"]
 [connection signal="body_exited" from="flee area" to="." method="_on_flee_area_body_exited"]
 [connection signal="timeout" from="papirsfly timer" to="." method="_on_papirsfly_timer_timeout"]
+[connection signal="timeout" from="knockback timer" to="." method="_on_knockback_timer_timeout"]

@@ -1,8 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbu3stwhgyade"]
+[gd_scene load_steps=23 format=3 uid="uid://bbu3stwhgyade"]
 
 [ext_resource type="Script" path="res://Scripts/gumball.gd" id="1_mjfny"]
 [ext_resource type="Texture2D" uid="uid://dscb2c3ac6rf" path="res://Sprites/Gumball/Gumhit1.png" id="2_cuxi8"]
 [ext_resource type="Texture2D" uid="uid://bvnp2ycer23iw" path="res://Sprites/Gumball/gumrunv1.png" id="2_essqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqn0k"]
+atlas = ExtResource("2_cuxi8")
+region = Rect2(150, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06ibg"]
+atlas = ExtResource("2_cuxi8")
+region = Rect2(300, 0, 150, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn3al"]
 atlas = ExtResource("2_cuxi8")
@@ -54,6 +62,17 @@ region = Rect2(450, 0, 150, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_18hqo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqn0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06ibg")
+}],
+"loop": true,
+"name": &"Knock",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jn3al")
@@ -129,8 +148,8 @@ script = ExtResource("1_mjfny")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_18hqo")
-animation = &"run"
-frame_progress = 0.615531
+animation = &"Knock"
+frame_progress = 0.379408
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ibsxy")
@@ -152,6 +171,9 @@ shape = SubResource("CircleShape2D_x8tum")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
 shape = SubResource("CircleShape2D_rslur")
 
+[node name="knockback timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
@@ -159,3 +181,4 @@ shape = SubResource("CircleShape2D_rslur")
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="body_entered" from="Attack Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack Area" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="knockback timer" to="." method="_on_knockback_timer_timeout"]

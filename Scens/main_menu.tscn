@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://86dif3hdi7lo"]
+[gd_scene load_steps=3 format=3 uid="uid://86dif3hdi7lo"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hjg0w"]
+[ext_resource type="AudioStream" uid="uid://l1h7fb682uwq" path="res://Assets/endmuse.mp3" id="2_culdr"]
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(-189, 137)
@@ -27,6 +28,10 @@ text = "Options"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="menu Musik" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_culdr")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

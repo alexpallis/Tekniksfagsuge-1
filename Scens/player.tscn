@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://c5lfgfc63k71o"]
+[gd_scene load_steps=185 format=3 uid="uid://c5lfgfc63k71o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xhu21"]
 [ext_resource type="Texture2D" uid="uid://b8ywdqrl6jxad" path="res://Sprites/Player/Bogiedashv2.png" id="2_1h2wp"]
@@ -348,6 +348,14 @@ region = Rect2(5200, 0, 200, 200)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pn3te"]
 atlas = ExtResource("4_ocfuk")
 region = Rect2(5400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rfgp"]
+atlas = ExtResource("5_66qcf")
+region = Rect2(0, 0, 170, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bhc6"]
+atlas = ExtResource("5_66qcf")
+region = Rect2(510, 0, 170, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5fms"]
 atlas = ExtResource("2_ff7n8")
@@ -974,8 +982,14 @@ animations = [{
 "name": &"attack up",
 "speed": 29.0
 }, {
-"frames": [],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rfgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bhc6")
+}],
+"loop": true,
 "name": &"dance",
 "speed": 5.0
 }, {
@@ -1342,9 +1356,8 @@ script = ExtResource("1_xhu21")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x8j3y")
-animation = &"walk left right"
+animation = &"dash down"
 autoplay = "idl down"
-frame_progress = 0.63208
 
 [node name="dash timer" type="Timer" parent="."]
 
