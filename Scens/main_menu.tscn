@@ -1,12 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://86dif3hdi7lo"]
+[gd_scene load_steps=5 format=3 uid="uid://86dif3hdi7lo"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hjg0w"]
 [ext_resource type="AudioStream" uid="uid://l1h7fb682uwq" path="res://Assets/endmuse.mp3" id="2_culdr"]
+[ext_resource type="Texture2D" uid="uid://bjronuiih263h" path="res://Assets/download.jpg" id="3_yvx7x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wg8n"]
+texture = ExtResource("3_yvx7x")
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(-189, 137)
 scale = Vector2(5.68, 6)
 script = ExtResource("1_hjg0w")
+
+[node name="menu Musik" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_culdr")
+autoplay = true
+max_distance = 200000.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(130.81, 34.5)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -58.0
+offset_top = -65.0
+offset_right = 321.0
+offset_bottom = 133.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8wg8n")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 123.493
+offset_top = 1.33333
+offset_right = 239.493
+offset_bottom = 24.3333
+text = "The Nightmare"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 94.1902
@@ -28,15 +56,6 @@ text = "Options"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="menu Musik" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_culdr")
-autoplay = true
-max_distance = 200000.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(130.81, 34.5)
-zoom = Vector2(0.8, 0.8)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
