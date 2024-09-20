@@ -76,9 +76,11 @@ func deal_with_damage():
 			can_take_damage = false
 			print("ghost health =", health)
 			if health <= 0:
+				get_tree().change_scene_to_file("res://You win screen.tscn")
 				self.queue_free()
 			is_inknockback = true
 			knockback_timer.start()
+			
 
 
 func _on_invin_timer_timeout():
