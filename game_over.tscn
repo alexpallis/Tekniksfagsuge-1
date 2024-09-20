@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dumtvd5p4yo1g"]
 
-[ext_resource type="Script" path="res://game_over.gd" id="1_h7st2"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_h7st2"]
 [ext_resource type="Texture2D" uid="uid://bfnastodtctc6" path="res://Assets/maxresdefault.png" id="2_yubwf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pj8sm"]
