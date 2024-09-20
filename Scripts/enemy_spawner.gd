@@ -13,6 +13,7 @@ var kills = 0
 @onready var random_dungeon = $"../RandomDungeon"
 @onready var level_2 = $Level2
 @onready var stage_2_maker = $"../Stage2Maker"
+@onready var boss_fight = $BossFight
 
 
 var max_benemies = 5 + Generator.level * 5
@@ -152,6 +153,9 @@ func _process(delta):
 	if coins == 20 and Generator.level == 0:
 		Generator.level = 1
 		level_2.start()
+	if coins == 20 and Generator.level == 1:
+		Generator.level = 2
+		boss_fight.start()
 
 #pause menu
 
