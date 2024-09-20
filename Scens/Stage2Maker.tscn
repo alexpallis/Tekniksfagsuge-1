@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://thu8732c5grn"]
+
+[ext_resource type="Texture2D" uid="uid://dgirupua6h7tw" path="res://Assets/floortile2l.png" id="1_d3k4r"]
+[ext_resource type="Texture2D" uid="uid://jxbo2uq4ctjo" path="res://Assets/walltile2l.png" id="2_xxbso"]
+[ext_resource type="Script" path="res://Scens/stage_2_maker.gd" id="3_8w2bn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv2ku"]
+texture = ExtResource("1_d3k4r")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4h6q"]
+texture = ExtResource("2_xxbso")
+texture_region_size = Vector2i(96, 96)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+
+[sub_resource type="TileSet" id="TileSet_6rhyd"]
+tile_size = Vector2i(96, 96)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tv2ku")
+sources/1 = SubResource("TileSetAtlasSource_v4h6q")
+
+[node name="RandomDungeonS2" type="TileMap"]
+tile_set = SubResource("TileSet_6rhyd")
+format = 2
+script = ExtResource("3_8w2bn")
