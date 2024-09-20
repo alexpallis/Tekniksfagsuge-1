@@ -161,7 +161,7 @@ func _process(delta):
 
 
 #score stuff
-@onready var player: Player = $Player
+
 
 @onready var dreams: Label = $Camera2D/healthBar_canvas/Dreams
 
