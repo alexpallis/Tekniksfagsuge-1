@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c7dvp5stlvk2g"]
+[gd_scene load_steps=64 format=3 uid="uid://c7dvp5stlvk2g"]
 
 [ext_resource type="Script" path="res://Scripts/bjørn.gd" id="1_csrmv"]
 [ext_resource type="Texture2D" uid="uid://dovqut03sajmu" path="res://Sprites/Bjørn/teddyfront.png" id="1_k2pfm"]
@@ -15,6 +15,18 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1wght"]
 radius = 20.0
 height = 104.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
+radius = 373.484
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sq65"]
+radius = 99.4082
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8r6s"]
+radius = 104.173
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlp04"]
+radius = 120.266
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgydt"]
 atlas = ExtResource("2_kgvn6")
@@ -139,14 +151,6 @@ region = Rect2(450, 0, 150, 120)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3hvm"]
 atlas = ExtResource("7_3bgjj")
 region = Rect2(600, 0, 150, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_teim4"]
-atlas = ExtResource("7_3bgjj")
-region = Rect2(750, 0, 150, 120)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ehpv5"]
-atlas = ExtResource("7_3bgjj")
-region = Rect2(900, 0, 150, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf14a"]
 atlas = ExtResource("6_qsvg3")
@@ -284,16 +288,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_64ffb")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_caqf6")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_55efd")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot down",
 "speed": 3.0
 }, {
@@ -319,7 +323,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a36ok")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot left right",
 "speed": 7.0
 }, {
@@ -338,16 +342,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j3hvm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_teim4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ehpv5")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot up",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -410,28 +408,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_13p4w"]
-radius = 373.484
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2sq65"]
-radius = 99.4082
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_b8r6s"]
-radius = 104.173
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nlp04"]
-radius = 120.266
-
 [node name="Bjørn" type="CharacterBody2D"]
 script = ExtResource("1_csrmv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1wght")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_bs2ub")
-animation = &"Knock"
-autoplay = "idl down"
 
 [node name="detection" type="Area2D" parent="."]
 light_mask = 2
@@ -453,7 +434,7 @@ shape = SubResource("CircleShape2D_2sq65")
 [node name="attack timer" type="Timer" parent="."]
 
 [node name="attack cooldown timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 
 [node name="attack area" type="Area2D" parent="."]
 scale = Vector2(4, 4)
@@ -469,10 +450,15 @@ shape = SubResource("CircleShape2D_nlp04")
 [node name="Papirer" type="Node2D" parent="."]
 
 [node name="papirsfly timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 
 [node name="knockback timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bs2ub")
+animation = &"shoot down"
+autoplay = "idl down"
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

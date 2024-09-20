@@ -1413,10 +1413,10 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [node name="Dreams" type="Label" parent="Camera2D/healthBar_canvas"]
-offset_left = 1055.0
+offset_left = 1004.0
 offset_top = 11.0
 offset_right = 1095.0
-offset_bottom = 34.0
+offset_bottom = 61.0
 
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash cooldown timer" to="." method="_on_dash_cooldown_timeout"]
