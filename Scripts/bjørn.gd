@@ -182,7 +182,7 @@ func _on_attack_timer_timeout():
 	if papirsfly_shoot == true:
 		var papir = global.papir_scene.instantiate()
 		papir.position = self.position
-		papirer.add_sibling(papir)
+		self.add_sibling(papir)
 		#print("hi %d" % [Time.get_time_dict_from_system().second])
 		papirsfly_timer.start()
 		papirsfly_shoot = false

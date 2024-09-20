@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 0.25
+var speed = 0.4
 var player_chase = false
 var player = null
 var player_hittable = true
@@ -10,11 +10,13 @@ var can_take_damage = true
 var attack_zone = false
 var knockback_SPEED = 2
 var is_inknockback = false
+var about_to_attack = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var Player = $Player
 @onready var invin_timer = $"invin timer"
 @onready var knockback_timer = $"knockback timer"
+@onready var attack_animation = $"Attack animation"
 
 
 func _physics_process(delta):
@@ -35,7 +37,7 @@ func _physics_process(delta):
 				animated_sprite.flip_h = true
 				animated_sprite.play("run")
 		
-		if attack_zone:
+		if about_to_attack:
 			position += (player.position - position) * speed * delta
 			if (player.position.x - position.x) > 0:
 				animated_sprite.flip_h = false
@@ -62,13 +64,15 @@ func _on_detection_body_exited(body):
 
 func _on_hitbox_body_entered(body):
 	if body.has_method("player"):
-		attack_zone = true
+		about_to_attack = true
+		attack_animation.start()
 		player_chase = false
 
 
 func _on_hitbox_body_exited(body):
 	if body.has_method("player"):
 		attack_zone = false
+		about_to_attack = false
 		player_chase = true
 
 
@@ -104,3 +108,8 @@ func enemy():
 
 func _on_knockback_timer_timeout():
 	is_inknockback = false
+
+
+func _on_attack_animation_timeout():
+	if about_to_attack == true:
+		attack_zone = true

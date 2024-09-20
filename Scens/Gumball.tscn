@@ -174,6 +174,9 @@ shape = SubResource("CircleShape2D_rslur")
 [node name="knockback timer" type="Timer" parent="."]
 wait_time = 0.2
 
+[node name="Attack animation" type="Timer" parent="."]
+wait_time = 0.25
+
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
@@ -182,3 +185,4 @@ wait_time = 0.2
 [connection signal="body_entered" from="Attack Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack Area" to="." method="_on_attack_area_body_exited"]
 [connection signal="timeout" from="knockback timer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="timeout" from="Attack animation" to="." method="_on_attack_animation_timeout"]
