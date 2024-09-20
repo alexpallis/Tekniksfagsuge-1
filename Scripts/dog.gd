@@ -11,6 +11,9 @@ var attack_zone = false
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var Player = $Player
 @onready var attack_animation = $"Attack animation"
+@onready var audio_stomping = $"../AudioStomping"
+
+
 
 
 func _physics_process(delta):
@@ -23,9 +26,11 @@ func _physics_process(delta):
 		if (player.position.x - position.x) < 0:
 			animated_sprite.flip_h = true
 			animated_sprite.play("run")
+			audio_stomping.play
 		
 	if about_to_attack:
 		position += (player.position - position) * speed * delta
+		audio_stomping.stop
 		if (player.position.x - position.x) > 0:
 			animated_sprite.flip_h = false
 			animated_sprite.play("attack")
