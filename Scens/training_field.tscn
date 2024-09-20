@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://df0yi0cgxwr2q"]
+[gd_scene load_steps=4 format=3 uid="uid://df0yi0cgxwr2q"]
 
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_uuoek"]
+[ext_resource type="PackedScene" uid="uid://cdrrcj3oqgcpi" path="res://Scens/barn.tscn" id="2_op1hs"]
+[ext_resource type="PackedScene" uid="uid://d121456sbwaax" path="res://Scens/dog.tscn" id="3_aqnah"]
 
 [node name="training field" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uuoek")]
 position = Vector2(320, 224)
+
+[node name="Barn" parent="." instance=ExtResource("2_op1hs")]
+position = Vector2(753, 226)
+
+[node name="DOG" parent="." instance=ExtResource("3_aqnah")]
+position = Vector2(220, 394)

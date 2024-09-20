@@ -151,9 +151,9 @@ func _on_spawned_coins_child_exiting_tree(node):
 	global.dreams_collected +=1
 
 func _process(delta):
-	if coins == 20 and Generator.level == 0:
+	if coins == 2 and Generator.level == 0:
 		Generator.level = 1
-		level_2.start()
+		get_tree().change_scene_to_file("res://Scens/level_2.tscn")
 	if coins == 20 and Generator.level == 1:
 		Generator.level = 2
 		get_tree().change_scene_to_file("res://Scens/BOSS FIGHT.tscn")
@@ -165,4 +165,4 @@ func _process(delta):
 
 
 func _on_level_2_timeout():
-	get_tree().change_scene_to_file("res://level_2.tscn")
+	get_tree().change_scene_to_file("res://Scens/level_2.tscn")
