@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const  SPEED = 0.75
+const  SPEED = 1
 var player_chase = false
 var player = null
 const knock_back_SPEED = 150
@@ -13,6 +13,7 @@ var can_take_damage = true
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var life_timer_timer = $"Life Timer Timer"
 
+
 func _ready():
 	if life_timer == true:
 		life_timer_timer.start()
@@ -23,24 +24,8 @@ func _physics_process(delta):
 	
 	if player_chase:
 		position += (player.position - position) * SPEED * delta
+		look_at(player.position)
 		#position += (player.position - position)/(sqrt((player.position - position)*(player.position - position))) * SPEED
-
-		if(player.position.x - position.x) < 0:
-			animated_sprite.flip_h = true
-			animated_sprite.play("fly left right")
-		
-		if(player.position.x - position.x) > 0:
-			animated_sprite.flip_h = false
-			animated_sprite.play("fly left right")
-		
-		if(player.position.y - position.y) < 0 and (player.position.x - position.x) == 0:
-			animated_sprite.flip_v = false
-			animated_sprite.play("fly up down")
-		
-		if(player.position.y - position.y) > 0 and (player.position.x - position.x) == 0:
-			animated_sprite.flip_v = true
-			animated_sprite.play("fly up down")
-	
 
 func _on_detection_body_entered(body):
 	if body.has_method("player"):
