@@ -16,12 +16,12 @@ var kills = 0
 @onready var boss_fight = $BossFight
 
 
-var max_benemies = 5 + Generator.level * 5
+var max_benemies = 8 + Generator.level * 5
 var benemy_count = 0 
-var max_genemies = 7 + Generator.level * 4
+var max_genemies = 8 + Generator.level * 4
 var genemy_count = 0
 var ghost_count = 0
-var max_ghost = 3 + Generator.level * 3
+var max_ghost = 5 + Generator.level * 3
 var rng = RandomNumberGenerator.new()
 var coin_count = 0
 var max_coins = 25
@@ -150,7 +150,7 @@ func _on_spawned_coins_child_exiting_tree(node):
 	
 
 func _process(delta):
-	if coins == 2 and Generator.level == 0:
+	if coins == 20 and Generator.level == 0:
 		Generator.level = 1
 		get_tree().change_scene_to_file("res://Scens/level_2.tscn")
 	if coins == 20 and Generator.level == 1:
