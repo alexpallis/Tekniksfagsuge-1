@@ -3,6 +3,10 @@ extends Node
 var player_current_attack = false
 var dreams_collected = 0
 
+func _process(delta):
+	if dreams_collected == 25:
+		dreams_collected = 0
+
 @onready var bjørn_scene = load("res://Scens/bjørn.tscn")
 @onready var papir_scene = load("res://Scens/papirsfly.tscn")
 @onready var coin_scene = load("res://Scens/coin.tscn")
