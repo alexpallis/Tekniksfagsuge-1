@@ -7,7 +7,7 @@ position = Vector2(448, 80)
 script = ExtResource("1_yyyjt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(75, 185)
+position = Vector2(50, 77)
 zoom = Vector2(2, 2)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
