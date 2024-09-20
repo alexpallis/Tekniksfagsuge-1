@@ -16,6 +16,7 @@ var kills = 0
 @onready var boss_fight = $BossFight
 
 
+
 var max_benemies = 8 + Generator.level * 5
 var benemy_count = 0 
 var max_genemies = 8 + Generator.level * 4

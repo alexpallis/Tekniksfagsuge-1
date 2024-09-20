@@ -27,6 +27,9 @@ var attack_ip = false
 @onready var currentHealth: int = health
 
 
+
+
+
 func _physics_process(_delta):
 	dash()
 	enermy_attack()
@@ -170,7 +173,11 @@ func update_health():
 	var healthbar = $Camera2D/healthBar_canvas/Health_BAr
 	healthbar.value = health
 	set_health_label()
+	set_dreams_label()
 	
 	
 func set_health_label():
 	$Camera2D/healthBar_canvas/Label.text = "hp: %s" % health
+
+func  set_dreams_label():
+	$Camera2D/healthBar_canvas/Dreams.text = "Dreams collected" + coins
