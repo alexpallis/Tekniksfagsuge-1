@@ -25,6 +25,7 @@ var attack_ip = false
 @onready var dash_noise = $"Dash noise"
 @onready var slash_cooldown_timer = $"Slash cooldown timer"
 @onready var currentHealth: int = health
+@onready var dreams = $Camera2D/healthBar_canvas/Dreams
 
 
 
@@ -173,11 +174,11 @@ func update_health():
 	var healthbar = $Camera2D/healthBar_canvas/Health_BAr
 	healthbar.value = health
 	set_health_label()
-	#set_dreams_label()
+	set_dream_label()
 	
 	
 func set_health_label():
 	$Camera2D/healthBar_canvas/Label.text = "hp: %s" % health
 
-#func  set_dreams_label():
-	#$Camera2D/healthBar_canvas/Dreams.text = "Dreams collected" + enemy_spawner.coins
+func set_dream_label():
+	dreams.text = "You have collected " + str(global.dreams_collected) + " dream(s), out of 20"
