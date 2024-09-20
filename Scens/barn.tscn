@@ -114,6 +114,7 @@ animations = [{
 }]
 
 [node name="Barn" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_7w3ml")
 
 [node name="detection" type="Area2D" parent="."]
@@ -145,9 +146,14 @@ autoplay = "idl down"
 [node name="knockback timer" type="Timer" parent="."]
 wait_time = 0.2
 
+[node name="random timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_entered"]
 [connection signal="body_exited" from="ghost hitbox" to="." method="_on_ghost_hitbox_body_exited"]
 [connection signal="timeout" from="invin timer" to="." method="_on_invin_timer_timeout"]
 [connection signal="timeout" from="knockback timer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="timeout" from="random timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="random timer" to="." method="_on_random_timer_timeout"]

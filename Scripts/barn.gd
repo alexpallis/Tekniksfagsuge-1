@@ -5,10 +5,13 @@ var player_chase = false
 var player = null
 var knockback_SPEED = 400
 
-var health = 100
+var health = 200
 var player_inattack_zone = false
 var can_take_damage = true
 var is_inknockback = false
+var rng = RandomNumberGenerator.new()
+var movebarn = Vector2()
+var randmove = true
 
 @onready var knockback_timer = $"knockback timer"
 @onready var animated_sprite = $AnimatedSprite2D
@@ -20,16 +23,20 @@ func _physics_process(delta):
 	deal_with_damage()
 	move_and_slide()
 
+	if randmove == true:
+		movebarn = Vector2(rng.randi_range(-9,9), rng.randi_range(-9, 9)).normalized()
+		randmove = false
+
 	if is_inknockback == false:
 		if player_chase:
-			position += (position - player.position).normalized() * SPEED * delta 
-
-			if(player.position.x - position.x) < 0:
-				animated_sprite.flip_h = true
+			position += movebarn * SPEED * delta 
+ 
+			if movebarn.x < 0:
+				animated_sprite.flip_h = false
 				animated_sprite.play("walk left right")
 			
-			if(player.position.x - position.x) > 0:
-				animated_sprite.flip_h = false
+			if movebarn.x > 0:
+				animated_sprite.flip_h = true
 				animated_sprite.play("walk left right")	
 		
 		else:
@@ -80,3 +87,7 @@ func _on_invin_timer_timeout():
 
 func _on_knockback_timer_timeout():
 	is_inknockback = false
+
+
+func _on_random_timer_timeout():
+	randmove = true
