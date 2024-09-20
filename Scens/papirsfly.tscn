@@ -35,13 +35,13 @@ animations = [{
 radius = 1683.73
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfxn"]
-radius = 104.0
+radius = 132.242
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_acp13"]
-radius = 8.0
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jktb3"]
-radius = 10.6667
+radius = 14.4
 
 [node name="papirsfly" type="CharacterBody2D"]
 light_mask = 3
@@ -75,14 +75,14 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_jktb3")
 
 [node name="Life Timer Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 7.5
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_entered"]
-[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
+[connection signal="body_entered" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_entered"]
 [connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsly_hitbox_body_exited"]
+[connection signal="body_exited" from="papirsfly hitbox" to="." method="_on_papirsfly_hitbox_body_exited"]
 [connection signal="area_shape_entered" from="dead area" to="." method="_on_dead_area_area_shape_entered"]
 [connection signal="body_entered" from="dead area" to="." method="_on_dead_area_body_entered"]
 [connection signal="timeout" from="Life Timer Timer" to="." method="_on_life_timer_timer_timeout"]

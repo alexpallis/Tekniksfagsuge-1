@@ -10,8 +10,10 @@ var health = 1
 var player_inattack_zone = false
 var can_take_damage = true
 
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var life_timer_timer = $"Life Timer Timer"
+
 
 
 func _ready():
@@ -21,11 +23,13 @@ func _ready():
 
 func _physics_process(delta):
 	deal_with_damage()
-	
+
 	if player_chase:
 		position += (player.position - position) * SPEED * delta
 		look_at(player.position)
 		#position += (player.position - position)/(sqrt((player.position - position)*(player.position - position))) * SPEED
+	if Generator.level == 1 or Generator.level == 2:
+		move_and_slide()
 
 func _on_detection_body_entered(body):
 	if body.has_method("player"):
@@ -56,12 +60,8 @@ func deal_with_damage():
 			print("papirsfly health =", health)
 			if health <= 0:
 				self.queue_free()
+
 	
-	move_and_slide()
-
-
-
-
 
 func _on_papirsly_hitbox_body_entered(body):
 	if body.has_method("player"):
