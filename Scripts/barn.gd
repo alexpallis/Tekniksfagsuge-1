@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 	if is_inknockback == false:
 		if player_chase:
-			position += (position - player.position).normalized() * SPEED * delta
+			position += (position - player.position).normalized() * SPEED * delta 
 
 			if(player.position.x - position.x) < 0:
 				animated_sprite.flip_h = true

@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://b0c2nwhoavdbf" path="res://Assets/boogiemanremix.mp3" id="1_uqvdm"]
 [ext_resource type="Texture2D" uid="uid://cdswh6adt1lac" path="res://Assets/newbedroomtilesetv5.png" id="2_7y3l0"]
 [ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="3_fvbli"]
-[ext_resource type="PackedScene" path="res://Scens/barn.tscn" id="4_fsd1t"]
+[ext_resource type="PackedScene" uid="uid://cdrrcj3oqgcpi" path="res://Scens/barn.tscn" id="4_fsd1t"]
 [ext_resource type="Texture2D" uid="uid://dlfqd8c6vgitg" path="res://Assets/bed1.png" id="4_kncib"]
 [ext_resource type="PackedScene" path="res://Scens/dog.tscn" id="5_vho56"]
 [ext_resource type="Texture2D" uid="uid://s07dhm1is02g" path="res://Assets/window1.png" id="7_td8i6"]
