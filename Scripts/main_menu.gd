@@ -1,7 +1,8 @@
-extends Control
+extends Node2D
+
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scens/game.tscn")
+	get_tree().change_scene_to_file("res://cut_scene.tscn")
 
 
 func _on_options_pressed() -> void:

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://df0yi0cgxwr2q"]
+
+[ext_resource type="PackedScene" uid="uid://c5lfgfc63k71o" path="res://Scens/player.tscn" id="1_uuoek"]
+[ext_resource type="PackedScene" uid="uid://k6hy3xpblfo2" path="res://Scens/ghost.tscn" id="2_uwt3o"]
+
+[node name="training field" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_uuoek")]
+position = Vector2(320, 224)
+
+[node name="ghost" parent="." instance=ExtResource("2_uwt3o")]
+position = Vector2(876, 250)

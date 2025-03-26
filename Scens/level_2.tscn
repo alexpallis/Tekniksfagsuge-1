@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0h6up2oj5sts"]
+
+[ext_resource type="PackedScene" uid="uid://thu8732c5grn" path="res://Scens/Stage2Maker.tscn" id="1_kn4kt"]
+[ext_resource type="PackedScene" uid="uid://b2htcgmpe4a5h" path="res://Scens/Enemy spawner.tscn" id="2_tv2sc"]
+[ext_resource type="PackedScene" uid="uid://brvt1dl8orpk3" path="res://Scens/music.tscn" id="3_gsv01"]
+
+[node name="Level 2" type="Node2D"]
+position = Vector2(-46, -32)
+
+[node name="Stage2Maker" parent="." instance=ExtResource("1_kn4kt")]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_tv2sc")]
+
+[node name="Music" parent="." instance=ExtResource("3_gsv01")]

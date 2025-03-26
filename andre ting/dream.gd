@@ -32,8 +32,3 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("move up"):
 		animated_sprite.play("idl up")
-
-
-
-func _on_body_entered(body):
-	game_manager.lose_health()
